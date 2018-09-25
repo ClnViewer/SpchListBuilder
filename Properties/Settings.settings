@@ -1,0 +1,72 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SpchListBuilder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VCSUrlStore" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;aaaaaaaaaaaaaa&lt;/string&gt;
+  &lt;string&gt;bbbbbbbbbbbbbb&lt;/string&gt;
+  &lt;string&gt;cccccccccccccccc&lt;/string&gt;
+  &lt;string&gt;dddddddddddddddd&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="WinHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="WinWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">560</Value>
+    </Setting>
+    <Setting Name="WinLeft" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WinTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="VCSBinPath" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;C:\TortoiseSVN\bin\svn.exe&lt;/string&gt;
+  &lt;string&gt;C:\TortoiseGIT\bin\git.exe&lt;/string&gt;
+  &lt;string /&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="VCSBinSelect" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="VCSBinText" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;SVN&lt;/string&gt;
+  &lt;string&gt;GIT&lt;/string&gt;
+  &lt;string&gt;HG&lt;/string&gt;
+  &lt;string&gt;NO!&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="GitSPCHLBHome" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/ClnViewer/SpchListBuilder</Value>
+    </Setting>
+    <Setting Name="TreeViewCollapse" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VCSOutListFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">spch-default.slist</Value>
+    </Setting>
+    <Setting Name="GitSPCHHome" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG</Value>
+    </Setting>
+    <Setting Name="AboutText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN / GIT / HG repository based on the file list.
+SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
+More information is available on the links below:</Value>
+    </Setting>
+    <Setting Name="VCSBinExe" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;svn.exe&lt;/string&gt;
+  &lt;string&gt;git.exe&lt;/string&gt;
+  &lt;string&gt;hg.exe&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

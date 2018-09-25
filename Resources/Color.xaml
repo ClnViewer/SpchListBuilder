@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    mc:Ignorable="options">
+
+    <Color x:Key="HighlightColorGreen">#FF477D11</Color>
+    <!--  80%  -->
+    <Color x:Key="AccentColorGreen1">#CC60A917</Color>
+    <!--  60%  -->
+    <Color x:Key="AccentColorGreen2">#9960A917</Color>
+    <!--  40%  -->
+    <Color x:Key="AccentColorGreen3">#6660A917</Color>
+    <!--  20%  -->
+    <Color x:Key="AccentColorGreen4">#3360A917</Color>
+
+    <SolidColorBrush x:Key="AccentColorGreenBrush1" Color="{StaticResource AccentColorGreen1}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorGreenBrush2" Color="{StaticResource AccentColorGreen2}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorGreenBrush3" Color="{StaticResource AccentColorGreen3}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorGreenBrush4" Color="{StaticResource AccentColorGreen4}" options:Freeze="True" />
+
+    <Color x:Key="HighlightColorRed">#FFA90E00</Color>
+    <!--  80%  -->
+    <Color x:Key="AccentColorRed1">#CCE51400</Color>
+    <!--  60%  -->
+    <Color x:Key="AccentColorRed2">#99E51400</Color>
+    <!--  40%  -->
+    <Color x:Key="AccentColorRed3">#66E51400</Color>
+    <!--  20%  -->
+    <Color x:Key="AccentColorRed4">#33E51400</Color>
+
+    <SolidColorBrush x:Key="AccentColorRedBrush1" Color="{StaticResource AccentColorRed1}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorRedBrush2" Color="{StaticResource AccentColorRed2}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorRedBrush3" Color="{StaticResource AccentColorRed3}" options:Freeze="True" />
+    <SolidColorBrush x:Key="AccentColorRedBrush4" Color="{StaticResource AccentColorRed4}" options:Freeze="True" />
+
+</ResourceDictionary>

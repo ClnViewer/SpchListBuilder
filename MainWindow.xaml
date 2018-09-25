@@ -1,0 +1,73 @@
+﻿<Controls:MetroWindow x:Class="SpchListBuilder.MainWindow"
+        Name="VCSMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SpchListBuilder"
+        xmlns:res="clr-namespace:SpchListBuilder.Properties"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:controlzEx="clr-namespace:ControlzEx;assembly=ControlzEx"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="{x:Static res:Resources.SPCH_List_Builder}" FontSize="16"
+        Height="{local:SettingBinding WinHeight}"
+        Width="{local:SettingBinding WinWidth}"
+        Left="{local:SettingBinding WinLeft}"
+        Top="{local:SettingBinding WinTop}"
+        d:DesignHeight="600"
+        d:DesignWidth="500"
+        mc:Ignorable="d"
+        ContentTemplate="{Binding}">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Name="BtnHome" Click="BtnHome_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_home_gps}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4,0,0,0"
+                   VerticalAlignment="Center"
+                   Text="{x:Static res:Resources.List}" x:Uid="ML_0078" />
+                </StackPanel>
+            </Button>
+            <Button Name="BtnSetup" Click="BtnSetup_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_cog}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                   VerticalAlignment="Center"
+                   Text="{x:Static res:Resources.settings}" x:Uid="ML_0035" />
+                </StackPanel>
+            </Button>
+            <Button Name="BtnExportList" Click="BtnExportList_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_disk_upload}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                   VerticalAlignment="Center"
+                   Text="{x:Static res:Resources.export}" x:Uid="ML_0040" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <StackPanel Orientation="Vertical">
+        <Frame
+             x:Name="ContentFrame"
+             Margin="0,0,0,0"
+             Width="{Binding ActualWidth, ElementName=MainGrid}"
+             NavigationUIVisibility="Hidden" />
+    </StackPanel>
+</Controls:MetroWindow>

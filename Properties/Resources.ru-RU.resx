@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_0_repository_1_contains_2_fil" xml:space="preserve">
+    <value>{0} репозиторий {1} содержит {2}  объектов</value>
+  </data>
+  <data name="_About" xml:space="preserve">
+    <value>_Зачем это</value>
+  </data>
+  <data name="_Options" xml:space="preserve">
+    <value>_Настройки</value>
+  </data>
+  <data name="_unknown_error" xml:space="preserve">
+    <value>неизвестная ошибка</value>
+  </data>
+  <data name="_VCS_executables" xml:space="preserve">
+    <value>_Пути к VCS файлам</value>
+  </data>
+  <data name="Add_to" xml:space="preserve">
+    <value>Выбрать файлы:</value>
+  </data>
+  <data name="another_process_is_running" xml:space="preserve">
+    <value>уже запущен процес получения данных</value>
+  </data>
+  <data name="AppAboutText" xml:space="preserve">
+    <value>SPLIT POST COMMIT HOOK позволяет создавать и поддерживать новый репозиторий SVN/GIT/HG на основании списка файлов.
+SpchListBuilder является приложением для создания списка файлов для SPCH на основе репозитория.
+Более подробная информация доступна по ссылкам приведенным ниже:</value>
+    <comment>Previous text: SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN / GIT / HG repository based on the file list.
+SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
+More information is available on the links below:</comment>
+  </data>
+  <data name="commit_0_1_2_3" xml:space="preserve">
+    <value>фиксирован: [{0}/{1}] : {2} : ({3}) {4}</value>
+  </data>
+  <data name="data_filed_count_is_0_abor" xml:space="preserve">
+    <value>данные не имеют записей, репозиторий пуст?</value>
+  </data>
+  <data name="data_serialization_error_a" xml:space="preserve">
+    <value>данные не могут быть преобразованы</value>
+  </data>
+  <data name="Data_Task" xml:space="preserve">
+    <value>Поток получения данных:</value>
+  </data>
+  <data name="Default_expand_view_repository" xml:space="preserve">
+    <value>Развернутый просмотр списка</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Отключено</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Включено</value>
+  </data>
+  <data name="Error0" xml:space="preserve">
+    <value>Ошибка:</value>
+  </data>
+  <data name="Exec_0_EXPORT_Setup_data_not_v" xml:space="preserve">
+    <value>Выполнение: {0} -&gt; EXPORT данные для этого действия недосточны</value>
+  </data>
+  <data name="Exec_0_Setup_data_not_valid_la" xml:space="preserve">
+    <value>Выполнение: {0} -&gt; данные для этого действия неимеют нужной метки: {1}</value>
+  </data>
+  <data name="exec_file_not_found" xml:space="preserve">
+    <value>исполняемый файл VCS отсутствует</value>
+  </data>
+  <data name="Exec_Setup_data_is_not_OK" xml:space="preserve">
+    <value>Выполнение: Установка данных выполнена с ошибкой</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>экспорт</value>
+  </data>
+  <data name="Export_Task" xml:space="preserve">
+    <value>Поток экспорта данных:</value>
+  </data>
+  <data name="extension_list_is_empty" xml:space="preserve">
+    <value>лист расширений файлов пуст</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>file://</value>
+  </data>
+  <data name="FillData" xml:space="preserve">
+    <value>Заполнение данных:</value>
+  </data>
+  <data name="Find_All_installed_executable" xml:space="preserve">
+    <value>Найти все  инсталлированные VCS</value>
+  </data>
+  <data name="GetData" xml:space="preserve">
+    <value>Получение данных:</value>
+  </data>
+  <data name="GetData_input_variable_is_empt" xml:space="preserve">
+    <value>входные данные пусты и не могут быть обработанны</value>
+  </data>
+  <data name="git" xml:space="preserve">
+    <value>git://</value>
+  </data>
+  <data name="hg" xml:space="preserve">
+    <value>hg://</value>
+  </data>
+  <data name="input_exec_path_is_empty_abort" xml:space="preserve">
+    <value>путь к исполняемому файлу VCS не указан</value>
+  </data>
+  <data name="input_VCS_url_is_empty_abort" xml:space="preserve">
+    <value>введите URL или путь к репозиторию</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>список</value>
+  </data>
+  <data name="Load_0_complete" xml:space="preserve">
+    <value>Репозиторий {0} успешно загружен</value>
+  </data>
+  <data name="Load_repo_0" xml:space="preserve">
+    <value>Загрузка репозитория: {0} ..</value>
+  </data>
+  <data name="no_files_selected_abort" xml:space="preserve">
+    <value>невыбраны файлы для списка</value>
+  </data>
+  <data name="no_items_from_repo_list" xml:space="preserve">
+    <value>список элементов репозитория пуст</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>НЕТ</value>
+  </data>
+  <data name="not_supported_VCS_operation" xml:space="preserve">
+    <value>выбранная VCS не поддерживает текущую операцию</value>
+  </data>
+  <data name="Operation_Cancelled" xml:space="preserve">
+    <value>Операция прервана</value>
+  </data>
+  <data name="Operation_fault" xml:space="preserve">
+    <value>Операция закончилась неудачно..</value>
+  </data>
+  <data name="Output_split_list_repository_f" xml:space="preserve">
+    <value>Имя файл листа в репозитории</value>
+  </data>
+  <data name="PageSetup" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="path_or_url_to_repository" xml:space="preserve">
+    <value>путь или URL-адрес репозитория</value>
+  </data>
+  <data name="Remove_to" xml:space="preserve">
+    <value>Отменить выбор:</value>
+  </data>
+  <data name="Remove_VCS_binary" xml:space="preserve">
+    <value>Удалить путь</value>
+  </data>
+  <data name="Search_VCS_binary" xml:space="preserve">
+    <value>Найти путь</value>
+  </data>
+  <data name="Select_executable_files" xml:space="preserve">
+    <value>Выбор исполняемых фйлов</value>
+  </data>
+  <data name="Select_VCS_binary" xml:space="preserve">
+    <value>Добавить путь</value>
+  </data>
+  <data name="select_VCS_type_for_request" xml:space="preserve">
+    <value>не выбран тип VCS: svn | git | hg</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>настройки</value>
+  </data>
+  <data name="SPCH_List_Builder" xml:space="preserve">
+    <value>SPCH генератор списка</value>
+  </data>
+  <data name="svn" xml:space="preserve">
+    <value>svn://</value>
+  </data>
+  <data name="Type_Uri_not_validate_use_path" xml:space="preserve">
+    <value>Неверный тип Uri, укажите директорию или Url</value>
+  </data>
+  <data name="Uri_is_empty" xml:space="preserve">
+    <value>Адрес репозитория пуст</value>
+  </data>
+  <data name="Uri_or_Path_is_empty" xml:space="preserve">
+    <value>URL или путь к репозиторию не указаны</value>
+  </data>
+  <data name="vcs_binary_path" xml:space="preserve">
+    <value>путь к исполняемым файлам VCS</value>
+  </data>
+  <data name="VCS_executable_files" xml:space="preserve">
+    <value>VCS исполняемый фйл (</value>
+  </data>
+  <data name="VCS_return" xml:space="preserve">
+    <value>VCS выполнение:</value>
+  </data>
+  <data name="VCS_type_not_selected_abort" xml:space="preserve">
+    <value>невыбран тип VCS</value>
+  </data>
+  <data name="XML" xml:space="preserve">
+    <value>XML </value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка: [</value>
+  </data>
+  <data name="undefined_fatal_error" xml:space="preserve">
+    <value>неизвестная ошибка приложения</value>
+  </data>
+  <data name="_Version" xml:space="preserve">
+    <value>Версия и ревезия</value>
+  </data>
+</root>
