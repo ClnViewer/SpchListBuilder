@@ -1,5 +1,6 @@
-# SpchListBuilder
-SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
+# Spch List Builder
+
+`Spch List Builder` is an application for creating a list of files for the SPCH based on the repository.
 
 SPLIT POST COMMIT HOOK - spch: allows you to create and maintain a new SVN/GIT/HG repository based on the file list.
 
