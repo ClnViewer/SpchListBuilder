@@ -106,7 +106,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Version &amp; revision.
+        ///   Ищет локализованную строку, похожую на _Version &amp; revision.
         /// </summary>
         public static string _Version {
             get {
@@ -423,6 +423,15 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Open GitHub Url.
+        /// </summary>
+        public static string Open_GitHub_Url {
+            get {
+                return ResourceManager.GetString("Open_GitHub_Url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Operation Cancelled.
         /// </summary>
         public static string Operation_Cancelled {
@@ -594,7 +603,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на VCS return:.
+        ///   Ищет локализованную строку, похожую на {0} return:.
         /// </summary>
         public static string VCS_return {
             get {

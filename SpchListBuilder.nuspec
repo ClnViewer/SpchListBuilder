@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/ClnViewer/SpchListBuilder/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ClnViewer/SpchListBuilder</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>updates..</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>VCS SVN GIT HG HOOK POST</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\spch.exe" target="lib/bin/SpchListBuilder.exe"/>
+  </files>
+</package>

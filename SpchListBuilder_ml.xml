@@ -137,9 +137,6 @@
   </GeneralIds>
   <GeneralIds>
     <StringID>46</StringID>
-    <Comment>Previous text: SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN / GIT / HG repository based on the file list.
-SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
-More information is available on the links below:</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>47</StringID>
@@ -203,6 +200,12 @@ More information is available on the links below:</Comment>
   </GeneralIds>
   <GeneralIds>
     <StringID>67</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>68</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>69</StringID>
   </GeneralIds>
   <Languages>
     <LanguageID>1049</LanguageID>
@@ -925,14 +928,14 @@ SpchListBuilder является приложением для создания 
   <GeneralTexts>
     <StringID>62</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>VCS return:</LanguageText>
-    <Status>1</Status>
+    <LanguageText>{0} return:</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>62</StringID>
     <LanguageID>1049</LanguageID>
-    <LanguageText>VCS выполнение:</LanguageText>
-    <Status>2</Status>
+    <LanguageText>{0} - выполнение:</LanguageText>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>63</StringID>
@@ -993,6 +996,30 @@ SpchListBuilder является приложением для создания 
     <LanguageID>1049</LanguageID>
     <LanguageText>Выполнение: {0} -&gt; данные для этого действия неимеют нужной метки: {1}</LanguageText>
     <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>68</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>_Version &amp; revision</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>68</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>_Версия и ревезия</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>69</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Open GitHub Url</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>69</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Открываем GitHub репозиторий:</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
@@ -1743,6 +1770,30 @@ SpchListBuilder является приложением для создания 
     <ResourceName>Exec_0_Setup_data_not_valid_la</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>_Version</Name>
+    <StringID>68</StringID>
+    <Selected>true</Selected>
+    <ResourceName>_Version</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageSetup.xaml</Component>
+    <Name>ML_0612.Header</Name>
+    <StringID>68</StringID>
+    <Selected>true</Selected>
+    <ResourceName>_Version</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Open_GitHub_Url</Name>
+    <StringID>69</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Open_GitHub_Url</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
   <GeneralAttributes>
     <Name>XmlDatabaseVersion</Name>
     <TextValue>1</TextValue>
@@ -1775,8 +1826,8 @@ SpchListBuilder является приложением для создания 
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>MaxMLIdForXaml</Name>
-    <TextValue>611</TextValue>
-    <NumValue>611</NumValue>
+    <TextValue>615</TextValue>
+    <NumValue>615</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>ResxForOriginalLang</Name>

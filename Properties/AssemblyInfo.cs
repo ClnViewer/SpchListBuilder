@@ -1,10 +1,35 @@
-﻿
-//#if(!DEBUG)    
-//     
-//#endif 
-//#if(!DEBUG)       
-//    #error SVN - Working copy has multiple revisions, please update to the latest revision before creating a release build. 
-//#endif
+﻿/*
+    MIT License
+
+    Copyright (c) 2018 PS
+    GitHub SPCH: https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG
+    GitHub SpchListBuilder: https://github.com/ClnViewer/SpchListBuilder
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sub license, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+ */
+
+#if(SVNCHECK)
+#   if(!DEBUG)    
+    #error SVN - Working copy has uncommitted modifications, please commit all modifications before creating a release build. 
+    #error SVN - Working copy has multiple revisions, please update to the latest revision before creating a release build. 
+#   endif
+#endif
 
 using System.Reflection;
 using System.Resources;
@@ -24,9 +49,9 @@ using SpchListBuilder.Properties;
 [assembly: ComVisible(false)]
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 [assembly: ThemeInfo(
-    ResourceDictionaryLocation.None, //где расположены словари ресурсов по конкретным тематикам
-    ResourceDictionaryLocation.SourceAssembly //где расположен словарь универсальных ресурсов
+    ResourceDictionaryLocation.None,
+    ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("1.0.76.*")]
-[assembly: AssemblyFileVersion("1.0.76.0")]
-[assembly: AssemblyInformationalVersion("Build date: 2018-09-25 16:21:45; Revision date: 2018-09-25 15:59:22; Revision(s) in working copy: 71:76.")]
+[assembly: AssemblyVersion("1.0.77.*")]
+[assembly: AssemblyFileVersion("1.0.77.0")]
+[assembly: AssemblyInformationalVersion("Build date: 2018-09-25 22:51:01; Revision date: 2018-09-25 16:40:04; Revision(s) in working copy: 71:77; WARNING working copy had uncommitted modifications.")]

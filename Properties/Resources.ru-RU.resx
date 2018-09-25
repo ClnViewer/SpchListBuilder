@@ -132,6 +132,9 @@
   <data name="_VCS_executables" xml:space="preserve">
     <value>_Пути к VCS файлам</value>
   </data>
+  <data name="_Version" xml:space="preserve">
+    <value>_Версия и ревезия</value>
+  </data>
   <data name="Add_to" xml:space="preserve">
     <value>Выбрать файлы:</value>
   </data>
@@ -142,9 +145,6 @@
     <value>SPLIT POST COMMIT HOOK позволяет создавать и поддерживать новый репозиторий SVN/GIT/HG на основании списка файлов.
 SpchListBuilder является приложением для создания списка файлов для SPCH на основе репозитория.
 Более подробная информация доступна по ссылкам приведенным ниже:</value>
-    <comment>Previous text: SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN / GIT / HG repository based on the file list.
-SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
-More information is available on the links below:</comment>
   </data>
   <data name="commit_0_1_2_3" xml:space="preserve">
     <value>фиксирован: [{0}/{1}] : {2} : ({3}) {4}</value>
@@ -239,6 +239,9 @@ More information is available on the links below:</comment>
   <data name="not_supported_VCS_operation" xml:space="preserve">
     <value>выбранная VCS не поддерживает текущую операцию</value>
   </data>
+  <data name="Open_GitHub_Url" xml:space="preserve">
+    <value>Открываем GitHub репозиторий:</value>
+  </data>
   <data name="Operation_Cancelled" xml:space="preserve">
     <value>Операция прервана</value>
   </data>
@@ -297,7 +300,7 @@ More information is available on the links below:</comment>
     <value>VCS исполняемый фйл (</value>
   </data>
   <data name="VCS_return" xml:space="preserve">
-    <value>VCS выполнение:</value>
+    <value>{0} - выполнение:</value>
   </data>
   <data name="VCS_type_not_selected_abort" xml:space="preserve">
     <value>невыбран тип VCS</value>
@@ -310,8 +313,5 @@ More information is available on the links below:</comment>
   </data>
   <data name="undefined_fatal_error" xml:space="preserve">
     <value>неизвестная ошибка приложения</value>
-  </data>
-  <data name="_Version" xml:space="preserve">
-    <value>Версия и ревезия</value>
   </data>
 </root>

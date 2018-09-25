@@ -132,6 +132,9 @@
   <data name="_VCS_executables" xml:space="preserve">
     <value>_VCS executables</value>
   </data>
+  <data name="_Version" xml:space="preserve">
+    <value>_Version &amp; revision</value>
+  </data>
   <data name="Add_to" xml:space="preserve">
     <value>Selected to</value>
   </data>
@@ -142,9 +145,6 @@
     <value>SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN/GIT/HG repository based on the file list.
 SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
 More information is available on the links below:</value>
-    <comment>Previous text: SPLIT POST COMMIT HOOK allows you to create and maintain a new SVN / GIT / HG repository based on the file list.
-SpchListBuilder is an application for creating a list of files for the SPCH based on the repository.
-More information is available on the links below:</comment>
   </data>
   <data name="commit_0_1_2_3" xml:space="preserve">
     <value>commit: : [{0}/{1}] : {2} : ({3}) {4}</value>
@@ -239,6 +239,9 @@ More information is available on the links below:</comment>
   <data name="not_supported_VCS_operation" xml:space="preserve">
     <value>not supported VCS operation</value>
   </data>
+  <data name="Open_GitHub_Url" xml:space="preserve">
+    <value>Open GitHub Url</value>
+  </data>
   <data name="Operation_Cancelled" xml:space="preserve">
     <value>Operation Cancelled</value>
   </data>
@@ -297,15 +300,12 @@ More information is available on the links below:</comment>
     <value>VCS executable files (</value>
   </data>
   <data name="VCS_return" xml:space="preserve">
-    <value>VCS return:</value>
+    <value>{0} return:</value>
   </data>
   <data name="VCS_type_not_selected_abort" xml:space="preserve">
     <value>VCS type not selected, abort</value>
   </data>
   <data name="XML" xml:space="preserve">
     <value>XML </value>
-  </data>
-  <data name="_Version" xml:space="preserve">
-    <value>Version &amp; revision</value>
   </data>
 </root>

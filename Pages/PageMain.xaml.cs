@@ -1,4 +1,30 @@
-﻿using System;
+﻿/*
+    MIT License
+
+    Copyright (c) 2018 PS
+    GitHub SPCH: https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG
+    GitHub SpchListBuilder: https://github.com/ClnViewer/SpchListBuilder
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sub license, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+ */
+
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -46,6 +72,7 @@ namespace SpchListBuilder.Pages
 
                         string __fileName = String.Empty;
                         string __ExecOut = x.Result as string;
+                        string __TxtOut = String.Empty;
                         
                         if (String.IsNullOrWhiteSpace(__ExecOut))
                         {
@@ -68,11 +95,8 @@ namespace SpchListBuilder.Pages
                                     string __exepath =
                                         Properties.Settings.Default.VCSBinPath[(int)repo.DataProvider];
                                     VCSExec exec = new VCSExec(__exepath, repo, __fileName);
-                                    string __TxtOut = exec.Exec(VCSDataRepo.EnumTypeRequest.__VCS_IMPORT);
+                                    __TxtOut = exec.Exec(VCSDataRepo.EnumTypeRequest.__VCS_IMPORT);
                                     exec = null;
-
-                                    if (!String.IsNullOrWhiteSpace(__TxtOut))
-                                        ShowMessageBox(Properties.Resources.VCS_return, __TxtOut);
 
                                     break;
                                 }
@@ -96,15 +120,13 @@ namespace SpchListBuilder.Pages
                                         File.WriteAllText(__fileName, __ExecOut);
 
                                         VCSExec exec = new VCSExec(__exepath, repo, __fileName);
-                                        string __TxtOut = exec.Exec(VCSDataRepo.EnumTypeRequest.__VCS_IMPORT);
+                                        __TxtOut = exec.Exec(VCSDataRepo.EnumTypeRequest.__VCS_IMPORT);
                                         exec = null;
-
-                                        if (!String.IsNullOrWhiteSpace(__TxtOut))
-                                            ShowMessageBox(Properties.Resources.VCS_return, __TxtOut);
                                     }
                                     catch (Exception e)
                                     {
                                         ShowMessageBox(Properties.Resources.Error0, e.Message);
+                                        return;
                                     }
                                     finally
                                     {
@@ -118,6 +140,15 @@ namespace SpchListBuilder.Pages
                                     return;
                                 }
                         }
+
+                        if (!String.IsNullOrWhiteSpace(__TxtOut))
+                            ShowMessageBox(
+                                String.Format(
+                                    Properties.Resources.VCS_return,
+                                    Properties.Settings.Default.VCSBinText[(int)repo.DataProvider]
+                                ),
+                                __TxtOut
+                            );
                     }
                     finally
                     {
