@@ -35,6 +35,8 @@ nuget:
 
     disable_publish_on_pr: true
 
+platform: Any CPU
+
 configuration: Release
 
 build:
