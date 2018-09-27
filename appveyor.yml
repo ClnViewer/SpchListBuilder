@@ -37,10 +37,6 @@ platform: Any CPU
 
 configuration: Release
 
-before_build:
-
-  - nuget restore
-
 build:
 
   parallel: false
@@ -55,11 +51,15 @@ build:
 
   verbosity: minimal
 
+before_build:
+
+  - nuget restore
+
 artifacts:
 
     - path: test.zip
 
-    - path: SpchListBuilder\Metro\bin\$(configuration)
+    - path: Metro\bin\$(configuration)
 
       name: SpchListBuilder
 
