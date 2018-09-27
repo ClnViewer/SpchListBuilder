@@ -57,11 +57,11 @@ branches:
 
   artifacts:
 
-    - path: test.zip
+    - path: SpchListBuilder.zip
 
     - path: SpchListBuilder\Metro\bin\$(configuration)
 
-    name: SpchListBuilder
+    - name: SpchListBuilder
 
     - path: '**\*.nupkg'
 
