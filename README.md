@@ -20,3 +20,9 @@ More information is available on the links below:
  - [Split post commit Hook :: Home](https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG)
 
 
+## License
+
+_MIT_
+
+
+
