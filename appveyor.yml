@@ -7,13 +7,11 @@ branches:
 
     - master
 
-    - production
-
   except:
 
     - gh-pages
 
-  skip_commits:
+skip_commits:
 
     files:
 
@@ -21,15 +19,15 @@ branches:
 
     - README.md
 
-  image: Visual Studio 2015
+image: Visual Studio 2015
 
-  init:
+init:
 
     - git config --global core.autocrlf input
 
-  clone_folder: c:\projects\SpchListBuilder
+clone_folder: c:\projects\SpchListBuilder
 
-  nuget:
+nuget:
 
     account_feed: true
 
@@ -37,11 +35,11 @@ branches:
 
     disable_publish_on_pr: true
 
-  platform: Any CPU
+platform: Any CPU
 
-  configuration: Release
+configuration: Release
 
-  build:
+build:
 
   parallel: false
 
@@ -55,28 +53,30 @@ branches:
 
   verbosity: minimal
 
-  artifacts:
+artifacts:
 
-    - path: SpchListBuilder.zip
+    - path: test.zip
 
     - path: SpchListBuilder\Metro\bin\$(configuration)
 
-    - name: SpchListBuilder
+      name: SpchListBuilder
 
     - path: '**\*.nupkg'
 
-  deploy:
+deploy:
 
     - provider: GitHub
 
-    artifact: /.*\.nupkg/
+      artifact: /.*\.nupkg/
 
-    draft: false
+      draft: false
 
-    prerelease: false
+      prerelease: false
 
-    on:
+      on:
 
-      branch: master
+        branch: master
 
-      appveyor_repo_tag: true
+        appveyor_repo_tag: true
+
+
