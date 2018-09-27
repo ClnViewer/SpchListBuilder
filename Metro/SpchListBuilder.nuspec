@@ -15,7 +15,9 @@
     <tags>VCS SVN GIT HG HOOK POST</tags>
   </metadata>
   <files>
-    <file src="bin\Release\spch.exe" target="lib/bin/SpchListBuilder.exe"/>
+    <file src="bin\Release\SpchListBuilder.exe" target="lib/bin/SpchListBuilder.exe"/>
     <file src="bin\Release\*.dll" target="lib/bin"/>
+    <file src="bin\Release\en\*.dll" target="lib/bin/en"/>
+    <file src="bin\Release\ru-RU\*.dll" target="lib/bin/ru-RU"/>
   </files>
 </package>
