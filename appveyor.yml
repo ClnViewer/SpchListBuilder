@@ -1,0 +1,82 @@
+
+version: 1.0.{build}
+
+branches:
+
+  only:
+
+    - master
+
+    - production
+
+  except:
+
+    - gh-pages
+
+  skip_commits:
+
+    files:
+
+    - docs/*
+
+    - README.md
+
+  image: Visual Studio 2015
+
+  init:
+
+    - git config --global core.autocrlf input
+
+  clone_folder: c:\projects\SpchListBuilder
+
+  nuget:
+
+    account_feed: true
+
+    project_feed: false
+
+    disable_publish_on_pr: true
+
+  platform: Any CPU
+
+  configuration: Release
+
+  build:
+
+  parallel: false
+
+  project: Metro\SpchListBuilder.sln
+
+  publish_nuget: true
+
+  publish_nuget_symbols: true
+
+  include_nuget_references: true
+
+  verbosity: minimal
+
+  artifacts:
+
+    - path: test.zip
+
+    - path: SpchListBuilder\Metro\bin\$(configuration)
+
+    name: SpchListBuilder
+
+    - path: '**\*.nupkg'
+
+  deploy:
+
+    - provider: GitHub
+
+    artifact: /.*\.nupkg/
+
+    draft: false
+
+    prerelease: false
+
+    on:
+
+      branch: master
+
+      appveyor_repo_tag: true
