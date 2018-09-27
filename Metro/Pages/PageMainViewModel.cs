@@ -27,10 +27,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 using SpchListBuilder.Base;
 using SpchListBuilder.Data;
+using SpchListBuilder.Extension;
 using SpchListBuilder.Properties;
 
 namespace SpchListBuilder.Pages
@@ -38,6 +42,7 @@ namespace SpchListBuilder.Pages
     public class PageMainViewModel : BaseViewModel
     {
         private bool __isProcess { get; set; }
+        private bool __isServiceMenu { get; set; }
         private int __repoItemsCount { get; set; }
         private string __blockInfo { get; set; }      // Top InfoBox
         string __repoInfo { get; set; }               // Bottom InfoBox
@@ -71,6 +76,11 @@ namespace SpchListBuilder.Pages
             get { return __isProcess; }
             set { __isProcess = value; OnPropertyChanged("IsProcess"); }      //MLHIDE
         }
+        public bool ServiceMenuIsEnable  // Spinner-Busy enable
+        {
+            get { return ((__isProcess) ? false : __isServiceMenu); }
+            set { __isServiceMenu = value; OnPropertyChanged("ServiceMenuIsEnable"); }      //MLHIDE
+        }
         public int RepoItemsCount
         {
             get { return __repoItemsCount; }
@@ -79,6 +89,7 @@ namespace SpchListBuilder.Pages
         public PageMainViewModel()
         {
             __isProcess = false;
+            __isServiceMenu = false;
             __repo = null;
             this.TvNodes = new ObservableCollectionExtension<Node>();
             this.ListExt = new ObservableCollectionExtension<ExtList>();
@@ -210,7 +221,7 @@ namespace SpchListBuilder.Pages
             }
         }
 
-        public Task<string> ExportNodeData(bool isSelected = false)
+        public Task<string> ExportNodeDataText(bool isSelected = false)
         {
             try
             {
@@ -230,6 +241,154 @@ namespace SpchListBuilder.Pages
                     {
                         Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
                         return String.Empty;
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
+                return null;
+            }
+        }
+
+        public Task<string> ExportNodeDataXml(VCSDataRepo repo, bool isSelected = false)
+        {
+            if (repo == null)
+                return null;
+
+            try
+            {
+                return Task<string>.Factory.StartNew(() =>
+                {
+                    if (__isProcess)
+                    {
+                        Fire_EventError(new StringEventArgs(null, Resources.another_process_is_running));
+                        return String.Empty;
+                    }
+                    try
+                    {
+                        SpchListData __data = new SpchListData()
+                        {
+                            Setting = new SpchSettings
+                            {
+                                Options = String.Empty,
+                                RepoName = repo.RepoName,
+                                Date = DateTime.Now.GetUnixTimeStamp()
+                            },
+                            Files = new SpchFiles
+                            {
+                                Files = this.TvNodes.ExportSelectedNode(isSelected)
+                            }
+                        };
+                        if ((__data.Files.Files == null) || (__data.Files.Files.Count == 0))
+                        {
+                            Fire_EventError(new StringEventArgs(null, Resources.Split_list_empty_select_files_));
+                            return String.Empty;
+                        }
+                        
+                        XmlSerializer s = new XmlSerializer(typeof(SpchListData));
+                        using (StringWriter sw = new StringWriter())
+                        {
+                            using (XmlWriter xw = XmlWriter.Create(sw, new XmlWriterSettings()
+                            {
+                                Encoding = new UTF8Encoding(false),
+                                Indent = true,
+                                NewLineOnAttributes = true,
+                            })
+                            )
+                            {
+                                s.Serialize(xw, __data);
+                                return sw.ToString();
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
+                        return String.Empty;
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
+                return null;
+            }
+        }
+
+        public Task<bool> LoadNodeDataAll(string inFpath = null)
+        {
+            if (
+                (inFpath == null) ||
+                (!File.Exists(inFpath))
+               )
+                return null;
+
+            try
+            {
+                return Task<bool>.Factory.StartNew(() =>
+                {
+                    if (__isProcess)
+                    {
+                        Fire_EventError(new StringEventArgs(null, Resources.another_process_is_running));
+                        return false;
+                    }
+                    try
+                    {
+                        SpchListData __XmlData = null;
+                        string __StrSrc = File.ReadAllText(inFpath);
+                        string __fileDate = String.Empty;
+
+                        if (String.IsNullOrWhiteSpace(__StrSrc))
+                        {
+                            Fire_EventError(new StringEventArgs(null, Resources.Xml_file_empty_or_corrupt));
+                            return false;
+                        }
+
+                        if (Properties.Settings.Default.XmlListOutputFormat)
+                        {
+                            XmlSerializer s = new XmlSerializer(typeof(SpchListData));
+                            using (TextReader t = new StringReader(__StrSrc))
+                            {
+                                __XmlData = (SpchListData)s.Deserialize(t);
+                                s = null;
+                            }
+                            if ((__XmlData == null) || (__XmlData.Files.Files.Count == 0))
+                            {
+                                Fire_EventError(new StringEventArgs(null, Resources.Split_list_empty_load_another));
+                                return false;
+                            }
+                            foreach (string f in __XmlData.Files.Files)
+                            {
+                                __TvNodes.SelectNodeByList(f.SplitToList());
+                            }
+                            __fileDate =
+                                __XmlData.Setting.Date.GetDateTimeFromUnixTimeStamp().ToShortDateString();
+                        }
+                        else
+                        {
+                            FileInfo fi = new FileInfo(inFpath);
+                            List<String> __list = __StrSrc.Split('\n').ToList<String>();
+
+                            foreach (string f in __list)
+                            {
+                                __TvNodes.SelectNodeByList(f.SplitToList());
+                            }
+                            __fileDate =
+                                fi.LastWriteTime.ToShortDateString();
+                            fi = null;
+                        }
+                        RepoInfo = String.Format(
+                            Resources.Load_0_last_edit_date_1,
+                             Path.GetFileName(inFpath),
+                             __fileDate
+                        );
+                        return true;
+                    }
+                    catch (Exception e)
+                    {
+                        Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
+                        return false;
                     }
                 });
             }

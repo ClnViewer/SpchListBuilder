@@ -159,36 +159,52 @@ namespace SpchListBuilder.Pages
                 return;
             }
 
-            Task t = psvm.SearchVCSBinaryStart(idx);
-
-            if (t == null)
-                return;
-
-            t.ContinueWith(x =>
+            try
             {
-                if (x == null)
-                {
-                    psvm.SetupPathSet = Properties.Resources.Operation_fault;
-                }
-                else if (x.IsCanceled)
-                {
-                    psvm.SetupPathSet = Properties.Resources.Operation_Cancelled;
-                }
-                else if (x.IsFaulted)
-                {
-                    psvm.SetupPathSet = (((x.Exception != null) && (x.Exception.Message != null)) ?
-                        x.Exception.Message : Properties.Resources.Operation_fault
-                    );
-                }
-                else
-                    psvm.SetupPathSet = String.Empty;
+                Task t = psvm.SearchVCSBinaryStart(idx);
 
-                psvm.SetupProcess = false;
-                CollectionViewSource.GetDefaultView(SetupVCSBinList.ItemsSource).Refresh();
+                if (t == null)
+                    return;
 
-                if (x != null)
-                    x.Dispose();
-            });
+                t.ContinueWith(x =>
+                {
+                    try
+                    {
+                        if (x == null)
+                        {
+                            psvm.SetupPathSet = Properties.Resources.Operation_fault;
+                        }
+                        else if (x.IsCanceled)
+                        {
+                            psvm.SetupPathSet = Properties.Resources.Operation_Cancelled;
+                        }
+                        else if (x.IsFaulted)
+                        {
+                            psvm.SetupPathSet = (((x.Exception != null) && (x.Exception.Message != null)) ?
+                                x.Exception.Message : Properties.Resources.Operation_fault
+                            );
+                        }
+                        else
+                            psvm.SetupPathSet = String.Empty;
+
+                        psvm.SetupProcess = false;
+                        CollectionViewSource.GetDefaultView(SetupVCSBinList.ItemsSource).Refresh();
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+                    }
+                    finally
+                    {
+                        if (x != null)
+                            x.Dispose();
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+            }
         }
     }
 }

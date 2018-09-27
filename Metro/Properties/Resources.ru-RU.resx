@@ -139,7 +139,7 @@
     <value>Выбрать файлы:</value>
   </data>
   <data name="another_process_is_running" xml:space="preserve">
-    <value>уже запущен процес получения данных</value>
+    <value>уже запущен процесс получения данных</value>
   </data>
   <data name="AppAboutText" xml:space="preserve">
     <value>SPLIT POST COMMIT HOOK позволяет создавать и поддерживать новый репозиторий SVN/GIT/HG на основании списка файлов.
@@ -160,6 +160,9 @@ SpchListBuilder является приложением для создания 
   </data>
   <data name="Default_expand_view_repository" xml:space="preserve">
     <value>Развернутый просмотр списка</value>
+  </data>
+  <data name="Default_output_list_format" xml:space="preserve">
+    <value>Выходной формат файла, по умолчинию XML</value>
   </data>
   <data name="Disabled" xml:space="preserve">
     <value>Отключено</value>
@@ -185,6 +188,12 @@ SpchListBuilder является приложением для создания 
   <data name="export" xml:space="preserve">
     <value>экспорт</value>
   </data>
+  <data name="export_all_files_list" xml:space="preserve">
+    <value>сохранить полный список файлов</value>
+  </data>
+  <data name="export_selected_files_list" xml:space="preserve">
+    <value>сохранить список выбранных файлов</value>
+  </data>
   <data name="Export_Task" xml:space="preserve">
     <value>Поток экспорта данных:</value>
   </data>
@@ -204,13 +213,16 @@ SpchListBuilder является приложением для создания 
     <value>Получение данных:</value>
   </data>
   <data name="GetData_input_variable_is_empt" xml:space="preserve">
-    <value>входные данные пусты и не могут быть обработанны</value>
+    <value>входные данные пусты и не могут быть обработаны</value>
   </data>
   <data name="git" xml:space="preserve">
     <value>git://</value>
   </data>
   <data name="hg" xml:space="preserve">
     <value>hg://</value>
+  </data>
+  <data name="import_files_list" xml:space="preserve">
+    <value>загрузить сохраненный список</value>
   </data>
   <data name="input_exec_path_is_empty_abort" xml:space="preserve">
     <value>путь к исполняемому файлу VCS не указан</value>
@@ -224,11 +236,14 @@ SpchListBuilder является приложением для создания 
   <data name="Load_0_complete" xml:space="preserve">
     <value>Репозиторий {0} успешно загружен</value>
   </data>
+  <data name="Load_0_last_edit_date_1" xml:space="preserve">
+    <value>Загружен: {0}, дата последних изменений: {1}</value>
+  </data>
   <data name="Load_repo_0" xml:space="preserve">
     <value>Загрузка репозитория: {0} ..</value>
   </data>
   <data name="no_files_selected_abort" xml:space="preserve">
-    <value>невыбраны файлы для списка</value>
+    <value>не выбраны файлы для списка</value>
   </data>
   <data name="no_items_from_repo_list" xml:space="preserve">
     <value>список элементов репозитория пуст</value>
@@ -281,8 +296,20 @@ SpchListBuilder является приложением для создания 
   <data name="SPCH_List_Builder" xml:space="preserve">
     <value>SPCH генератор списка</value>
   </data>
+  <data name="SPCH_list_files" xml:space="preserve">
+    <value>SPCH сохраненный список (</value>
+  </data>
+  <data name="Split_list_empty_load_another" xml:space="preserve">
+    <value>Загружаемый файл пуст, попробуйте загрузить другой файл</value>
+  </data>
+  <data name="Split_list_empty_select_files_" xml:space="preserve">
+    <value>Файлы не выбраны, невозможно сохранить список</value>
+  </data>
   <data name="svn" xml:space="preserve">
     <value>svn://</value>
+  </data>
+  <data name="TEXT" xml:space="preserve">
+    <value>TEXT</value>
   </data>
   <data name="Type_Uri_not_validate_use_path" xml:space="preserve">
     <value>Неверный тип Uri, укажите директорию или Url</value>
@@ -303,10 +330,13 @@ SpchListBuilder является приложением для создания 
     <value>{0} - выполнение:</value>
   </data>
   <data name="VCS_type_not_selected_abort" xml:space="preserve">
-    <value>невыбран тип VCS</value>
+    <value>не выбран тип VCS</value>
   </data>
   <data name="XML" xml:space="preserve">
     <value>XML </value>
+  </data>
+  <data name="Xml_file_empty_or_corrupt" xml:space="preserve">
+    <value>Загружаемый файл поврежден или пуст</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Ошибка: [</value>

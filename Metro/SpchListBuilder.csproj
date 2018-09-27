@@ -100,6 +100,7 @@
     </ApplicationDefinition>
     <Compile Include="Base\BaseNotifyPropertyChanged.cs" />
     <Compile Include="Base\BaseCommand.cs" />
+    <Compile Include="Data\SpchListData.cs" />
     <Compile Include="Data\VCSDataRepo.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Base\BaseViewModel.cs" />

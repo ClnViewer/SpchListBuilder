@@ -1,0 +1,245 @@
+﻿<pg:BasePage x:Class="SpchListBuilder.Pages.PageMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:pg="clr-namespace:SpchListBuilder.Pages"
+      xmlns:local="clr-namespace:SpchListBuilder"
+      xmlns:res="clr-namespace:SpchListBuilder.Properties"
+      xmlns:ext="clr-namespace:SpchListBuilder.Extension"
+      xmlns:CtrlMh="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:CtrlZex="clr-namespace:ControlzEx;assembly=ControlzEx"
+      Title="{x:Static res:Resources.SPCH_List_Builder}"
+      FontSize="16"
+      d:DesignHeight="600"
+      d:DesignWidth="500"
+      d:DataContext="{d:DesignInstance local:Pages.PageMainViewModel}"
+      mc:Ignorable="d">
+    <pg:BasePage.Resources>
+        <HierarchicalDataTemplate x:Key="VCSList" DataType="{x:Type local:Data.Node}" ItemsSource="{Binding Path=Nodes}">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Check, Mode=TwoWay}" />
+                <TextBlock Text="{Binding Name}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <ext:BoolToVisibilityConverter x:Key="cnvVisable"></ext:BoolToVisibilityConverter>
+        <Style x:Key="ServiceMenuStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Fill" Value="{StaticResource ResourceKey=AccentBaseColorBrush}" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False" x:Uid="ML_0528">
+                    <Setter Property="Fill" Value="{DynamicResource GrayBrush7}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TreeView">
+            <Setter Property="BorderBrush" Value="{StaticResource ResourceKey=AccentBaseColorBrush}" />
+            <Setter Property="BorderThickness" Value="0,1,0,1" x:Uid="ML_0115"></Setter>
+            <Setter Property="Background" Value="White" x:Uid="ML_0116" />
+            <Setter Property="VerticalAlignment" Value="Top" x:Uid="ML_0117" />
+            <Setter Property="Height" Value="400" x:Uid="ML_0118" />
+            <Setter Property="Margin" Value="5" x:Uid="ML_0119" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TreeView">
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                            <ScrollViewer CanContentScroll="False" Padding="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <ItemsPresenter ClipToBounds="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"></ItemsPresenter>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{local:SettingBinding TreeViewCollapse}" />
+        </Style>
+    </pg:BasePage.Resources>
+    <pg:BasePage.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ThicknessAnimation Duration="0:0:0.45" Storyboard.TargetProperty="Margin" From="500,0,-500,0" To="0" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Unloaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ThicknessAnimation Duration="0:0:0.45" Storyboard.TargetProperty="Margin" From="0" To="-500,0,500,0" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </pg:BasePage.Triggers>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Grid Margin="5" Name="UrlGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="135" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                    <ComboBox
+                       IsEditable="True"
+                       VerticalContentAlignment="Top"
+                       Name="CBoxUri"
+                         CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.path_or_url_to_repository}"
+                         CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                         CtrlMh:ComboBoxHelper.EnableVirtualizationWithGrouping="True"
+                       Keyboard.KeyDown="CBoxUri_KeyDown"
+                       ItemsSource="{local:SettingBinding VCSUrlStore}" />
+                    <Border 
+                      Grid.Row="1" Grid.Column="0"
+                      Height="44"
+                      Margin="0,5,0,0" Padding="5"
+                      VerticalAlignment="Center"
+                      Background="{StaticResource ResourceKey=AccentColorBrush4}"
+                      TextBlock.Foreground="#333">
+                        <TextBlock x:Name="VCSInfo"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10,0,0,0"
+                           FontSize="12"
+                           TextWrapping="Wrap"
+                           Text="{Binding BlockInfo}" 
+                           Foreground="{StaticResource ResourceKey=AccentBaseColorBrush}" />
+                </Border>
+                </StackPanel>
+                <CtrlMh:SplitButton
+                    Grid.Row="0" Grid.Column="1"
+                    Name="CBoxButton"
+                    Icon="{DynamicResource appbar_link}"
+                    HorizontalContentAlignment="Left"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    VerticalContentAlignment="Center"
+                    Width="130" Height="75"
+                    Margin="0,0,0,0"
+                    Click="BtnGetUri_Click"
+                    CommandParameter="{Binding Path=Text, ElementName=CBoxUri}"
+                    CtrlZex:KeyboardNavigationEx.AlwaysShowFocusVisual="True"
+                    SelectedIndex="{local:SettingBinding VCSBinSelect}"
+                    ItemsSource="{local:SettingBinding VCSBinText}" />
+            </Grid>
+            <TreeView
+            Name="VCSTreeView"
+            ItemTemplate="{StaticResource VCSList}"
+            ItemsSource="{Binding TvNodes}"
+            SelectedItemChanged="VCSTreeView_SelectedItemChanged">
+                <TreeView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="{x:Static res:Resources.Add_to}" ItemsSource="{Binding ListExt}" x:Uid="ML_0054">
+                            <MenuItem.Icon>
+                                <Rectangle Width="15" Height="15" Fill="{StaticResource ResourceKey=AccentColorGreenBrush1}">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush Visual="{StaticResource appbar_tiles_add}" Stretch="Fill" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </MenuItem.Icon>
+                            <MenuItem.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem CommandTarget="{Binding}" CommandParameter="{Binding Name}" Click="VCSTreeView_ContextMenu_Select">
+                                        <MenuItem.Header>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </MenuItem.Header>
+                                    </MenuItem>
+                                </DataTemplate>
+                            </MenuItem.ItemTemplate>
+                        </MenuItem>
+                        <MenuItem Header="{x:Static res:Resources.Remove_to}" ItemsSource="{Binding ListExt}" x:Uid="ML_0058">
+                            <MenuItem.Icon>
+                                <Rectangle Width="15" Height="15" Fill="{StaticResource ResourceKey=AccentColorRedBrush1}">
+                                    <Rectangle.OpacityMask>
+                                        <VisualBrush Visual="{StaticResource appbar_tiles_minus}" Stretch="Fill" />
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                            </MenuItem.Icon>
+                            <MenuItem.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem CommandTarget="{Binding}" CommandParameter="{Binding Name}" Click="VCSTreeView_ContextMenu_UnSelect">
+                                        <MenuItem.Header>
+                                            <TextBlock Text="{Binding Name}" />
+                                        </MenuItem.Header>
+                                    </MenuItem>
+                                </DataTemplate>
+                            </MenuItem.ItemTemplate>
+                        </MenuItem>
+                    </ContextMenu>
+                </TreeView.ContextMenu>
+            </TreeView>
+            <Grid
+                VerticalAlignment="Top"
+                Margin="10,5,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Row="0" Grid.Column="0"
+                    x:Name="VCSRepoInfo"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,0,0"
+                    FontSize="12"
+                    Text="{Binding RepoInfo}" 
+                    Foreground="{StaticResource ResourceKey=AccentBaseColorBrush}" />
+                <Rectangle
+                    Grid.Row="0" Grid.Column="1"
+                    Width="23"
+                    Height="23"
+                    Cursor="Hand"
+                    ToolTip="{x:Static res:Resources.import_files_list}"
+                    MouseDown="ServiceListLoad_MouseDown"
+                    IsEnabled="{Binding ServiceMenuIsEnable}"
+                    Style="{StaticResource ServiceMenuStyle}" x:Uid="ML_0577">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_page_upload}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <Rectangle
+                    Grid.Row="0" Grid.Column="2"
+                    Width="23"
+                    Height="23"
+                    Cursor="Hand"
+                    ToolTip="{x:Static res:Resources.export_selected_files_list}"
+                    MouseDown="SaveSelectedXmlList_MouseDown"
+                    IsEnabled="{Binding ServiceMenuIsEnable}"
+                    Style="{StaticResource ServiceMenuStyle}" x:Uid="ML_0579">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_page_download}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+                <Rectangle
+                    Grid.Row="0" Grid.Column="3"
+                    Width="23"
+                    Height="23"
+                    Cursor="Hand"
+                    ToolTip="{x:Static res:Resources.export_all_files_list}"
+                    MouseDown="SaveFullXmlList_MouseDown"
+                    IsEnabled="{Binding ServiceMenuIsEnable}"
+                    Style="{StaticResource ServiceMenuStyle}" x:Uid="ML_0581">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_page_arrow}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Grid>
+        </StackPanel>
+        <CtrlMh:ProgressRing x:Name="LoadSpinner"
+                           Width="44"
+                           Height="44"
+                           Margin="1,0,0,0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Canvas.ZIndex="10000000"
+                           Visibility="{Binding IsProcess, Converter={StaticResource cnvVisable}}"
+                           IsActive="{Binding IsProcess}" />
+    </Grid>
+</pg:BasePage>

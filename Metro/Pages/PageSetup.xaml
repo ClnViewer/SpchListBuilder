@@ -98,6 +98,7 @@
                                         Grid.Row="0" Grid.Column="1"
                                         Width="23"
                                         Height="18"
+                                        Cursor="Hand"
                                         MouseDown="SetupVCSBinList_Selection"
                                         Fill="{StaticResource ResourceKey=AccentBaseColorBrush}">
                                         <Rectangle.OpacityMask>
@@ -163,6 +164,14 @@
                         IsChecked="{local:SettingBinding TreeViewCollapse}"
                         OffLabel="{x:Static res:Resources.Disabled}"
                         OnLabel="{x:Static res:Resources.Enabled}"
+                        Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0229" />
+                    <Label Content="{x:Static res:Resources.Default_output_list_format}"/>
+                    <CtrlMh:ToggleSwitch
+                        Margin="10,2,0,2"
+                        IsEnabled="{Binding SetupUIisEnable, Mode=OneWay}"
+                        IsChecked="{local:SettingBinding XmlListOutputFormat}"
+                        OffLabel="{x:Static res:Resources.TEXT}"
+                        OnLabel="{x:Static res:Resources.XML}"
                         Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0229" />
                 </StackPanel>
             </Expander>

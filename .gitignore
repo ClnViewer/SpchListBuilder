@@ -1,7 +1,8 @@
 
 .svn
 .ignoresvn
+/Backup
+/Bootstrap
 /_git-commit.sh
 /_svn-commit.sh
-SpchListBuilder_TemporaryKey.pfx
-SpchListBuilder.csproj.user
+/_svn-init.sh

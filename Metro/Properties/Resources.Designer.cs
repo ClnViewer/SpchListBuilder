@@ -124,7 +124,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на another process is running.
+        ///   Ищет локализованную строку, похожую на already started the process of obtaining data.
         /// </summary>
         public static string another_process_is_running {
             get {
@@ -153,7 +153,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на data no fields, repo is empty?.
+        ///   Ищет локализованную строку, похожую на the data has no entries, the repository is empty?.
         /// </summary>
         public static string data_filed_count_is_0_abor {
             get {
@@ -162,7 +162,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на data is not serialized.
+        ///   Ищет локализованную строку, похожую на data can not be converted.
         /// </summary>
         public static string data_serialization_error_a {
             get {
@@ -185,6 +185,15 @@ namespace SpchListBuilder.Properties {
         public static string Default_expand_view_repository {
             get {
                 return ResourceManager.GetString("Default_expand_view_repository", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Output split list format, default XML.
+        /// </summary>
+        public static string Default_output_list_format {
+            get {
+                return ResourceManager.GetString("Default_output_list_format", resourceCulture);
             }
         }
         
@@ -216,7 +225,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Exec: {0} -&gt; EXPORT Setup data not valid options.
+        ///   Ищет локализованную строку, похожую на Execution: {0} -&gt; EXPORT data for this action is not valid.
         /// </summary>
         public static string Exec_0_EXPORT_Setup_data_not_v {
             get {
@@ -225,7 +234,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Exec: {0} -&gt; Setup data not valid label: {1}.
+        ///   Ищет локализованную строку, похожую на Execution: {0} -&gt; The data for this action does not have the desired label: {1}.
         /// </summary>
         public static string Exec_0_Setup_data_not_valid_la {
             get {
@@ -234,7 +243,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на VCS binary file not found.
+        ///   Ищет локализованную строку, похожую на the VCS executable file is missing.
         /// </summary>
         public static string exec_file_not_found {
             get {
@@ -243,7 +252,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Exec: Setup data is not OK.
+        ///   Ищет локализованную строку, похожую на Execution: Data set with error.
         /// </summary>
         public static string Exec_Setup_data_is_not_OK {
             get {
@@ -261,6 +270,24 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на save the full list of files.
+        /// </summary>
+        public static string export_all_files_list {
+            get {
+                return ResourceManager.GetString("export_all_files_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на save the list of selected files.
+        /// </summary>
+        public static string export_selected_files_list {
+            get {
+                return ResourceManager.GetString("export_selected_files_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Export Data:.
         /// </summary>
         public static string Export_Task {
@@ -270,7 +297,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на extension list is empty.
+        ///   Ищет локализованную строку, похожую на the file extensions list is empty.
         /// </summary>
         public static string extension_list_is_empty {
             get {
@@ -297,7 +324,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Find All installed executable.
+        ///   Ищет локализованную строку, похожую на Find All installed VCS executable.
         /// </summary>
         public static string Find_All_installed_executable {
             get {
@@ -315,7 +342,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на input data is empty.
+        ///   Ищет локализованную строку, похожую на input data is empty and can not be processed.
         /// </summary>
         public static string GetData_input_variable_is_empt {
             get {
@@ -342,7 +369,16 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на path to VCS binary file is empty.
+        ///   Ищет локализованную строку, похожую на load a saved list.
+        /// </summary>
+        public static string import_files_list {
+            get {
+                return ResourceManager.GetString("import_files_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The path to the VCS executable is not specified.
         /// </summary>
         public static string input_exec_path_is_empty_abort {
             get {
@@ -351,7 +387,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на enter URL or Path to repository.
+        ///   Ищет локализованную строку, похожую на enter the URL or path to the repository.
         /// </summary>
         public static string input_VCS_url_is_empty_abort {
             get {
@@ -378,6 +414,15 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Load: {0}, last edit date: {1}.
+        /// </summary>
+        public static string Load_0_last_edit_date_1 {
+            get {
+                return ResourceManager.GetString("Load_0_last_edit_date_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Load repo: {0} ...
         /// </summary>
         public static string Load_repo_0 {
@@ -387,7 +432,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на no files selected, abort.
+        ///   Ищет локализованную строку, похожую на no files selected for the list.
         /// </summary>
         public static string no_files_selected_abort {
             get {
@@ -396,7 +441,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на no items from repo list.
+        ///   Ищет локализованную строку, похожую на list of items in the repository is empty.
         /// </summary>
         public static string no_items_from_repo_list {
             get {
@@ -414,7 +459,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на not supported VCS operation.
+        ///   Ищет локализованную строку, похожую на The selected VCS does not support the current operation.
         /// </summary>
         public static string not_supported_VCS_operation {
             get {
@@ -432,7 +477,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Operation Cancelled.
+        ///   Ищет локализованную строку, похожую на Operation cancelled.
         /// </summary>
         public static string Operation_Cancelled {
             get {
@@ -549,6 +594,33 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на SPCH save list files (.
+        /// </summary>
+        public static string SPCH_list_files {
+            get {
+                return ResourceManager.GetString("SPCH_list_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The downloaded file is empty, try to load a different file.
+        /// </summary>
+        public static string Split_list_empty_load_another {
+            get {
+                return ResourceManager.GetString("Split_list_empty_load_another", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на No files selected, can not save list.
+        /// </summary>
+        public static string Split_list_empty_select_files_ {
+            get {
+                return ResourceManager.GetString("Split_list_empty_select_files_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на svn://.
         /// </summary>
         public static string svn {
@@ -558,7 +630,16 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Type Uri not validate, use path to directory or Url.
+        ///   Ищет локализованную строку, похожую на TEXT.
+        /// </summary>
+        public static string TEXT {
+            get {
+                return ResourceManager.GetString("TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Invalid Uri type, specify directory or Url.
         /// </summary>
         public static string Type_Uri_not_validate_use_path {
             get {
@@ -567,7 +648,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на repo Uri is empty.
+        ///   Ищет локализованную строку, похожую на Uri repository address is empty.
         /// </summary>
         public static string Uri_is_empty {
             get {
@@ -576,7 +657,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на repo URL or Path is missing.
+        ///   Ищет локализованную строку, похожую на URL or path to repository not specified.
         /// </summary>
         public static string Uri_or_Path_is_empty {
             get {
@@ -612,7 +693,7 @@ namespace SpchListBuilder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на VCS type not selected, abort.
+        ///   Ищет локализованную строку, похожую на no VCS type selected.
         /// </summary>
         public static string VCS_type_not_selected_abort {
             get {
@@ -626,6 +707,15 @@ namespace SpchListBuilder.Properties {
         public static string XML {
             get {
                 return ResourceManager.GetString("XML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The downloaded file is corrupt or empty.
+        /// </summary>
+        public static string Xml_file_empty_or_corrupt {
+            get {
+                return ResourceManager.GetString("Xml_file_empty_or_corrupt", resourceCulture);
             }
         }
     }

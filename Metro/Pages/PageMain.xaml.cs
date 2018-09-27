@@ -51,6 +51,63 @@ namespace SpchListBuilder.Pages
             vcsp.EventError += EventErrorPrint;
         }
 
+        #region Controls update
+
+        private void VCSInfoSetText(string Src)
+        {
+            Dispatcher.BeginInvoke((Action)(() =>
+            {
+                (this.DataContext as PageMainViewModel).BlockInfo = Src;
+                VCSInfo.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
+            }));
+        }
+
+        private void VCSRepoInfoSetText(string Src)
+        {
+            Dispatcher.BeginInvoke((Action)(() =>
+            {
+                (this.DataContext as PageMainViewModel).RepoInfo = Src;
+                VCSRepoInfo.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
+            }));
+        }
+
+        private void SelectorExtension(RoutedEventArgs e, bool isSet)
+        {
+            if ((e == null) || (e.OriginalSource == null))
+                return;
+
+            string __ext = (e.OriginalSource as MenuItem).CommandParameter as String;
+            if (String.IsNullOrWhiteSpace(__ext))
+                return;
+
+            (this.DataContext as PageMainViewModel).TvNodes.SelectNodeByExt(__ext, isSet);
+        }
+
+        private void VCSTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if ((e == null) || (e.NewValue == null))
+                return;
+
+            Node node = e.NewValue as Node;
+            if ((node == null) || (node.Desc == String.Empty))
+                return;
+
+            VCSInfoSetText(node.Desc);
+        }
+
+        private void VCSTreeView_ContextMenu_Select(object sender, RoutedEventArgs e)
+        {
+            SelectorExtension(e, true);
+        }
+
+        private void VCSTreeView_ContextMenu_UnSelect(object sender, RoutedEventArgs e)
+        {
+            SelectorExtension(e, false);
+        }
+
+        #endregion
+        #region VCS Export
+
         public void CallVCSExport()
         {
             try
@@ -58,7 +115,10 @@ namespace SpchListBuilder.Pages
                 if (repo == null)
                     return;
 
-                Task<string> t = vcsp.ExportNodeData(true);
+                Task<string> t = ((Properties.Settings.Default.XmlListOutputFormat) ?
+                    vcsp.ExportNodeDataXml(repo, true) :
+                    vcsp.ExportNodeDataText(true)
+                );
 
                 if (t == null)
                     return;
@@ -73,14 +133,14 @@ namespace SpchListBuilder.Pages
                         string __fileName = String.Empty;
                         string __ExecOut = x.Result as string;
                         string __TxtOut = String.Empty;
-                        
+
                         if (String.IsNullOrWhiteSpace(__ExecOut))
                         {
                             ShowMessageBox(Properties.Resources.Error0, Properties.Resources.no_files_selected_abort);
                             return;
                         }
 
-                        switch(repo.TypeRequest)
+                        switch (repo.TypeRequest)
                         {
                             case VCSDataRepo.EnumTypeRequest.__VCS_STAT:
                                 {
@@ -152,7 +212,8 @@ namespace SpchListBuilder.Pages
                     }
                     finally
                     {
-                        x.Dispose();
+                        if (x != null)
+                            x.Dispose();
                     }
                 });
             }
@@ -162,6 +223,9 @@ namespace SpchListBuilder.Pages
                 ShowMessageBox(Properties.Resources.Error0, ex.ToString());
             }
         }
+
+        #endregion
+        #region VCS Get
 
         private void CallVCSData(string uri)
         {
@@ -184,6 +248,18 @@ namespace SpchListBuilder.Pages
                 Properties.Settings.Default.VCSBinSelect = (int)repo.DataProvider;
                 CBoxButton.GetBindingExpression(ListBox.SelectedIndexProperty).UpdateTarget();
                 string __exec = Properties.Settings.Default.VCSBinPath[(int)repo.DataProvider];
+                string __file = Path.GetFileNameWithoutExtension(
+                    Properties.Settings.Default.VCSOutListFileName
+                );
+                Properties.Settings.Default.VCSOutListFileName =
+                    String.Format(
+                        "{0}.{1}",                                              //MLHIDE
+                        __file,
+                        ((Properties.Settings.Default.XmlListOutputFormat) ?
+                            Properties.Settings.Default.XmlListOutputExtension[1] :
+                            Properties.Settings.Default.XmlListOutputExtension[0]
+                        )
+                    );
 
                 VCSInfoSetText(String.Format(Properties.Resources.Load_repo_0, repo.RepoName));
                 VCSRepoInfoSetText(String.Empty);
@@ -207,11 +283,22 @@ namespace SpchListBuilder.Pages
                         else
                             return;
 
-                        var match = Properties.Settings.Default.VCSUrlStore
-                            .Cast<string>().ToList<string>()
-                            .FirstOrDefault(stringToCheck => stringToCheck.Contains(uri));
+                        bool __isAddStore = false;
 
-                        if (match == null)
+                        if (Properties.Settings.Default.VCSUrlStore.Count == 0)
+                        {
+                            __isAddStore = true;
+                        }
+                        else
+                        {
+                            var match = Properties.Settings.Default.VCSUrlStore
+                                .Cast<string>().ToList<string>()
+                                .FirstOrDefault(stringToCheck => stringToCheck.Contains(uri));
+
+                            if (match == null)
+                                __isAddStore = true;
+                        }
+                        if (__isAddStore)
                         {
                             Properties.Settings.Default.VCSUrlStore.Insert(0, uri);
                             Properties.Settings.Default.Save();
@@ -221,10 +308,12 @@ namespace SpchListBuilder.Pages
                             Settings.Default.VCSBinText[(int)repo.DataProvider],
                             repo.RepoName, vcsp.RepoItemsCount
                         ));
+                        vcsp.ServiceMenuIsEnable = true;
                     }
                     finally
                     {
-                        x.Dispose();
+                        if (x != null)
+                            x.Dispose();
                     }
                 });
             }
@@ -233,58 +322,6 @@ namespace SpchListBuilder.Pages
                 VCSInfoSetText(String.Empty);
                 ShowMessageBox(Properties.Resources.Error0, ex.ToString());
             }
-        }
-
-        private void VCSInfoSetText(string Src)
-        {
-            Dispatcher.BeginInvoke((Action)(() =>
-            {
-                (this.DataContext as PageMainViewModel).BlockInfo = Src;
-                VCSInfo.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
-            }));
-        }
-
-        private void VCSRepoInfoSetText(string Src)
-        {
-            Dispatcher.BeginInvoke((Action)(() =>
-            {
-                (this.DataContext as PageMainViewModel).RepoInfo = Src;
-                VCSRepoInfo.GetBindingExpression(TextBlock.TextProperty).UpdateTarget();
-            }));
-        }
-
-        private void SelectorExtension(RoutedEventArgs e, bool isSet)
-        {
-            if ((e == null) || (e.OriginalSource == null))
-                return;
-
-            string __ext = (e.OriginalSource as MenuItem).CommandParameter as String;
-            if (String.IsNullOrWhiteSpace(__ext))
-                return;
-
-            (this.DataContext as PageMainViewModel).TvNodes.SelectNodeByExt(__ext, isSet);
-        }
-
-        private void VCSTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-            if ((e == null) || (e.NewValue == null))
-                return;
-
-            Node node = e.NewValue as Node;
-            if ((node == null) || (node.Desc == String.Empty))
-                return;
-
-            VCSInfoSetText(node.Desc);
-        }
-
-        private void VCSTreeView_ContextMenu_Select(object sender, RoutedEventArgs e)
-        {
-            SelectorExtension(e, true);
-        }
-
-        private void VCSTreeView_ContextMenu_UnSelect(object sender, RoutedEventArgs e)
-        {
-            SelectorExtension(e, false);
         }
 
         private void CBoxUri_KeyDown(object sender, KeyEventArgs e)
@@ -306,5 +343,143 @@ namespace SpchListBuilder.Pages
             string __uri = (e.OriginalSource as Button).CommandParameter as String;
             CallVCSData(__uri);
         }
+
+        #endregion
+        #region ServiceList Load
+
+        private void ServiceListLoad_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount < 2)
+                return;
+
+            try
+            {
+                int sel = ((Properties.Settings.Default.XmlListOutputFormat) ? 1 : 0);
+                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+                dlg.Multiselect = false;
+                dlg.RestoreDirectory = true;
+                dlg.DefaultExt = Properties.Settings.Default.XmlListOutputExtension[sel];
+                dlg.Filter =
+                    Properties.Resources.SPCH_list_files
+                    + "*." + Properties.Settings.Default.XmlListOutputExtension[sel] + ")|*." //MLHIDE
+                    + Properties.Settings.Default.XmlListOutputExtension[sel];
+
+                if (
+                    (dlg.ShowDialog() != true) ||
+                    (String.IsNullOrWhiteSpace(dlg.FileName))
+                   )
+                    return;
+
+                Task<bool> t = vcsp.LoadNodeDataAll(dlg.FileName);
+
+                if (t == null)
+                    return;
+
+                t.ContinueWith(x =>
+                {
+                    try
+                    {
+                        TaskCheckReturn<bool>(x, Properties.Resources.GetData);
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+                    }
+                    finally
+                    {
+                        if (x != null)
+                            x.Dispose();
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+            }
+        }
+
+        #endregion
+        #region ServiceList Save
+
+        private void ServiceListSave(bool ischeck)
+        {
+            try
+            {
+                int sel = ((Properties.Settings.Default.XmlListOutputFormat) ? 1 : 0);
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                dlg.RestoreDirectory = true;
+                dlg.DefaultExt = Properties.Settings.Default.XmlListOutputExtension[sel];
+                dlg.Filter =
+                    Properties.Resources.SPCH_list_files
+                    + "*." + Properties.Settings.Default.XmlListOutputExtension[sel] + ")|*." //MLHIDE
+                    + Properties.Settings.Default.XmlListOutputExtension[sel];
+                dlg.FileName = String.Format(
+                    "{0}-{1}-{2}.{3}",                                                        //MLHIDE
+                    repo.RepoName,
+                    DateTime.Now.ToShortDateString(),
+                    ((ischeck) ? "selected" : "full"),                                        //MLHIDE
+                    Properties.Settings.Default.XmlListOutputExtension[sel]
+                );
+
+                if (
+                    (dlg.ShowDialog() != true) ||
+                    (String.IsNullOrWhiteSpace(dlg.FileName))
+                   )
+                    return;
+
+                Task<string> t = ((Properties.Settings.Default.XmlListOutputFormat) ?
+                    vcsp.ExportNodeDataXml(repo, ischeck) :
+                    vcsp.ExportNodeDataText(ischeck)
+                );
+
+                if (t == null)
+                    return;
+
+                t.ContinueWith(x =>
+                {
+                    try
+                    {
+                        if (!TaskCheckReturn<string>(x, Properties.Resources.GetData))
+                            return;
+                        
+                        string __body = x.Result as String;
+                        if (String.IsNullOrWhiteSpace(__body))
+                            return;
+
+                        File.WriteAllText(dlg.FileName, __body);
+                    }
+                    catch (Exception ex)
+                    {
+                        ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+                    }
+                    finally
+                    {
+                        if (x != null)
+                            x.Dispose();
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                ShowMessageBox(Properties.Resources.Error0, ex.ToString());
+            }
+        }
+
+        private void SaveSelectedXmlList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount < 2)
+                return;
+
+            ServiceListSave(true);
+        }
+
+        private void SaveFullXmlList_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount < 2)
+                return;
+
+            ServiceListSave(false);
+        }
+        #endregion
     }
 }

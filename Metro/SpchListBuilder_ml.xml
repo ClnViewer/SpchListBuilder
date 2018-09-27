@@ -207,6 +207,36 @@
   <GeneralIds>
     <StringID>69</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>70</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>71</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>72</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>73</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>74</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>75</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>76</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>77</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>78</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>79</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>1049</LanguageID>
     <LanguageName>Русский (Россия)</LanguageName>
@@ -276,8 +306,8 @@
   <GeneralTexts>
     <StringID>10</StringID>
     <LanguageID>1049</LanguageID>
-    <LanguageText>входные данные пусты и не могут быть обработанны</LanguageText>
-    <Status>7</Status>
+    <LanguageText>входные данные пусты и не могут быть обработаны</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>11</StringID>
@@ -408,7 +438,7 @@
   <GeneralTexts>
     <StringID>8</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>repo URL or Path is missing</LanguageText>
+    <LanguageText>URL or path to repository not specified</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -420,19 +450,19 @@
   <GeneralTexts>
     <StringID>10</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>input data is empty</LanguageText>
+    <LanguageText>input data is empty and can not be processed</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>12</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>data is not serialized</LanguageText>
+    <LanguageText>data can not be converted</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>13</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>data no fields, repo is empty?</LanguageText>
+    <LanguageText>the data has no entries, the repository is empty?</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -462,19 +492,19 @@
   <GeneralTexts>
     <StringID>18</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>enter URL or Path to repository</LanguageText>
+    <LanguageText>enter the URL or path to the repository</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>2</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>path to VCS binary file is empty</LanguageText>
+    <LanguageText>The path to the VCS executable is not specified</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>3</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>VCS binary file not found</LanguageText>
+    <LanguageText>the VCS executable file is missing</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -540,7 +570,7 @@
   <GeneralTexts>
     <StringID>30</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>repo Uri is empty</LanguageText>
+    <LanguageText>Uri repository address is empty</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -576,14 +606,14 @@
   <GeneralTexts>
     <StringID>33</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>another process is running</LanguageText>
-    <Status>1</Status>
+    <LanguageText>already started the process of obtaining data</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>33</StringID>
     <LanguageID>1049</LanguageID>
-    <LanguageText>уже запущен процес получения данных</LanguageText>
-    <Status>2</Status>
+    <LanguageText>уже запущен процесс получения данных</LanguageText>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>34</StringID>
@@ -624,14 +654,14 @@
   <GeneralTexts>
     <StringID>37</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Operation Cancelled</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Operation cancelled</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>37</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Операция прервана</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>38</StringID>
@@ -648,14 +678,14 @@
   <GeneralTexts>
     <StringID>39</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Type Uri not validate, use path to directory or Url</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Invalid Uri type, specify directory or Url</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>39</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Неверный тип Uri, укажите директорию или Url</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>40</StringID>
@@ -672,26 +702,26 @@
   <GeneralTexts>
     <StringID>41</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>no items from repo list</LanguageText>
-    <Status>1</Status>
+    <LanguageText>list of items in the repository is empty</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>41</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>список элементов репозитория пуст</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>42</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>extension list is empty</LanguageText>
-    <Status>1</Status>
+    <LanguageText>the file extensions list is empty</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>42</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>лист расширений файлов пуст</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>43</StringID>
@@ -754,8 +784,8 @@ SpchListBuilder является приложением для создания 
   <GeneralTexts>
     <StringID>48</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Find All installed executable</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Find All installed VCS executable</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>49</StringID>
@@ -833,7 +863,7 @@ SpchListBuilder является приложением для создания 
     <StringID>48</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Найти все  инсталлированные VCS</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>47</StringID>
@@ -916,14 +946,14 @@ SpchListBuilder является приложением для создания 
   <GeneralTexts>
     <StringID>61</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>no files selected, abort</LanguageText>
-    <Status>1</Status>
+    <LanguageText>no files selected for the list</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>61</StringID>
     <LanguageID>1049</LanguageID>
-    <LanguageText>невыбраны файлы для списка</LanguageText>
-    <Status>2</Status>
+    <LanguageText>не выбраны файлы для списка</LanguageText>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>62</StringID>
@@ -940,55 +970,55 @@ SpchListBuilder является приложением для создания 
   <GeneralTexts>
     <StringID>63</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>VCS type not selected, abort</LanguageText>
-    <Status>1</Status>
+    <LanguageText>no VCS type selected</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>63</StringID>
     <LanguageID>1049</LanguageID>
-    <LanguageText>невыбран тип VCS</LanguageText>
-    <Status>2</Status>
+    <LanguageText>не выбран тип VCS</LanguageText>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>64</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>not supported VCS operation</LanguageText>
-    <Status>1</Status>
+    <LanguageText>The selected VCS does not support the current operation</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>64</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>выбранная VCS не поддерживает текущую операцию</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>65</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Exec: Setup data is not OK</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Execution: Data set with error</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>65</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Выполнение: Установка данных выполнена с ошибкой</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>66</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Exec: {0} -&gt; EXPORT Setup data not valid options</LanguageText>
-    <Status>1</Status>
+    <LanguageText>Execution: {0} -&gt; EXPORT data for this action is not valid</LanguageText>
+    <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>66</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Выполнение: {0} -&gt; EXPORT данные для этого действия недосточны</LanguageText>
-    <Status>2</Status>
+    <Status>7</Status>
   </GeneralTexts>
   <GeneralTexts>
     <StringID>67</StringID>
     <LanguageID>9</LanguageID>
-    <LanguageText>Exec: {0} -&gt; Setup data not valid label: {1}</LanguageText>
+    <LanguageText>Execution: {0} -&gt; The data for this action does not have the desired label: {1}</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <GeneralTexts>
@@ -1019,6 +1049,126 @@ SpchListBuilder является приложением для создания 
     <StringID>69</StringID>
     <LanguageID>1049</LanguageID>
     <LanguageText>Открываем GitHub репозиторий:</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>70</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Output split list format, default XML</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>71</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>TEXT</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>72</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>SPCH save list files (</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>70</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Выходной формат файла, по умолчинию XML</LanguageText>
+    <Status>6</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>71</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>TEXT</LanguageText>
+    <Status>6</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>73</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>load a saved list</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>73</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>загрузить сохраненный список</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>74</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>save the list of selected files</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>74</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>сохранить список выбранных файлов</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>75</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>save the full list of files</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>75</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>сохранить полный список файлов</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>76</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>No files selected, can not save list</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>76</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Файлы не выбраны, невозможно сохранить список</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>77</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>The downloaded file is corrupt or empty</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>77</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Загружаемый файл поврежден или пуст</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>78</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>The downloaded file is empty, try to load a different file</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>78</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Загружаемый файл пуст, попробуйте загрузить другой файл</LanguageText>
+    <Status>7</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>79</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Load: {0}, last edit date: {1}</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>79</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>Загружен: {0}, дата последних изменений: {1}</LanguageText>
+    <Status>2</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>72</StringID>
+    <LanguageID>1049</LanguageID>
+    <LanguageText>SPCH сохраненный список (</LanguageText>
     <Status>2</Status>
   </GeneralTexts>
   <Properties>
@@ -1794,6 +1944,149 @@ SpchListBuilder является приложением для создания 
     <ResourceName>Open_GitHub_Url</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Default_output_list_format</Name>
+    <StringID>70</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Default_output_list_format</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>TEXT</Name>
+    <StringID>71</StringID>
+    <Selected>true</Selected>
+    <ResourceName>TEXT</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>SPCH_list_files</Name>
+    <StringID>72</StringID>
+    <Selected>true</Selected>
+    <ResourceName>SPCH_list_files</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageSetup.xaml</Component>
+    <Name>ML_0614.Header</Name>
+    <StringID>60</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Search_VCS_binary</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageSetup.xaml</Component>
+    <Name>ML_0619.Content</Name>
+    <StringID>70</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Default_output_list_format</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageSetup.xaml</Component>
+    <Name>ML_0626.Text</Name>
+    <StringID>46</StringID>
+    <Selected>true</Selected>
+    <ResourceName>AppAboutText</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageSetup.xaml</Component>
+    <Name>ML_0635.Header</Name>
+    <StringID>68</StringID>
+    <Selected>true</Selected>
+    <ResourceName>_Version</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageMain.xaml</Component>
+    <Name>ML_0528.Value</Name>
+    <Selected>false</Selected>
+    <ResourceName>ML_0528_Value</ResourceName>
+    <Hidden>true</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageMain.xaml</Component>
+    <Name>ML_0577.ToolTip</Name>
+    <StringID>73</StringID>
+    <Selected>true</Selected>
+    <ResourceName>import_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>import_files_list</Name>
+    <StringID>73</StringID>
+    <Selected>true</Selected>
+    <ResourceName>import_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageMain.xaml</Component>
+    <Name>ML_0579.ToolTip</Name>
+    <StringID>74</StringID>
+    <Selected>true</Selected>
+    <ResourceName>export_selected_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>export_selected_files_list</Name>
+    <StringID>74</StringID>
+    <Selected>true</Selected>
+    <ResourceName>export_selected_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>PageMain.xaml</Component>
+    <Name>ML_0581.ToolTip</Name>
+    <StringID>75</StringID>
+    <Selected>true</Selected>
+    <ResourceName>export_all_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>export_all_files_list</Name>
+    <StringID>75</StringID>
+    <Selected>true</Selected>
+    <ResourceName>export_all_files_list</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Split_list_empty_select_files_</Name>
+    <StringID>76</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Split_list_empty_select_files_</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Xml_file_empty_or_corrupt</Name>
+    <StringID>77</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Xml_file_empty_or_corrupt</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Split_list_empty_load_another</Name>
+    <StringID>78</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Split_list_empty_load_another</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resources.resx</Component>
+    <Name>Load_0_last_edit_date_1</Name>
+    <StringID>79</StringID>
+    <Selected>true</Selected>
+    <ResourceName>Load_0_last_edit_date_1</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
   <GeneralAttributes>
     <Name>XmlDatabaseVersion</Name>
     <TextValue>1</TextValue>
@@ -1801,7 +2094,7 @@ SpchListBuilder является приложением для создания 
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>StatusHash</Name>
-    <TextValue>9FM6c+ZHxxDT3b+yU95m4ayKaJE=</TextValue>
+    <TextValue>DymwL57/Ow8rm7pR4pm2oLdJP/A=</TextValue>
     <NumValue>0</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>
@@ -1826,8 +2119,8 @@ SpchListBuilder является приложением для создания 
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>MaxMLIdForXaml</Name>
-    <TextValue>615</TextValue>
-    <NumValue>615</NumValue>
+    <TextValue>638</TextValue>
+    <NumValue>638</NumValue>
   </GeneralAttributes>
   <GeneralAttributes>
     <Name>ResxForOriginalLang</Name>

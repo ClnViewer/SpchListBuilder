@@ -70,6 +70,38 @@ namespace SpchListBuilder.Data
     public static class ObservableCollectionExtensionUtil
     {
         #region Public methods
+        #region SelectNodeByList methods
+
+        public static void SelectNodeByList(this ObservableCollectionExtension<Node> Nodes, List<string> list)
+        {
+            if ((Nodes == null) || (Nodes.Count == 0))
+                return;
+
+            ObservableCollectionExtension<Node> n = Nodes;
+
+            foreach (string s in list)
+            {
+                bool __isFound = false;
+
+                foreach (Node node in n)
+                {
+                     if (node.Name.Equals(s))
+                     {
+                         n = node.Nodes;
+                         if (n.Count == 0)
+                             node.Check = true;
+
+                         __isFound = true;
+                         break;
+                     }
+                }
+
+                if (!__isFound)
+                    break;
+            }
+        }
+
+        #endregion
         #region SelectNodeByExt methods
 
         public static void SelectNodeByExt(this ObservableCollectionExtension<Node> Nodes, string ExtTag, bool isCheck)

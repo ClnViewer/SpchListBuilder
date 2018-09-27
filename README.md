@@ -4,4 +4,8 @@
 
 `SPLIT POST COMMIT HOOK` - `spch`: allows you to create and maintain a new SVN/GIT/HG repository based on the file list.
 
+![SpchListBuilder Main screen](docs/SpchListBuilder-Main.png)
+
+![SpchListBuilder Setup screen](docs/SpchListBuilder-Setup.png)
+
 More information is available on the links below: https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG

@@ -25,13 +25,8 @@ namespace SpchListBuilder.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>aaaaaaaaaaaaaa</string>
-  <string>bbbbbbbbbbbbbb</string>
-  <string>cccccccccccccccc</string>
-  <string>dddddddddddddddd</string>
-</ArrayOfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
         public global::System.Collections.Specialized.StringCollection VCSUrlStore {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["VCSUrlStore"]));
@@ -209,6 +204,29 @@ More information is available on the links below:")]
         public global::System.Collections.Specialized.StringCollection VCSBinExe {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["VCSBinExe"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool XmlListOutputFormat {
+            get {
+                return ((bool)(this["XmlListOutputFormat"]));
+            }
+            set {
+                this["XmlListOutputFormat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>slist</string>\r\n  <string>xslist</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection XmlListOutputExtension {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["XmlListOutputExtension"]));
             }
         }
     }

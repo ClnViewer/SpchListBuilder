@@ -46,5 +46,13 @@ namespace SpchListBuilder.Extension
                 return new List<string> { Src };
             return Src.Split(__sep).ToList<String>();
         }
+        public static Int32 GetUnixTimeStamp(this DateTime time)
+        {
+            return Convert.ToInt32((time - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds);
+        }
+        public static DateTime GetDateTimeFromUnixTimeStamp(this Int32 time)
+        {
+            return (DateTime)(new DateTime(1970, 1, 1, 0, 0, 0, 0)).AddSeconds(time);
+        }
     }
 }
