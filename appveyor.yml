@@ -53,6 +53,8 @@ build:
 
 before_build:
 
+  - cd Metro
+
   - nuget restore
 
 artifacts:
