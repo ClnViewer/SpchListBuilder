@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SpchListBuilder</id>
-    <version>0.0.1</version>
+    <version>$version$</version>
     <title>Spch List Builder</title>
     <authors>PS</authors>
     <owners>PS</owners>
