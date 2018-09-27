@@ -11,7 +11,8 @@
 
 ![SpchListBuilder Setup screen](docs/SpchListBuilder-Setup.png)
 
-[zip archive NET 4.0](https://ci.appveyor.com/api/buildjobs/0so13a4rjwdbyy8j/artifacts/Metro%2Fbin%2FSpchListBuilder.zip)
-[nuget archive NET 4.0](https://ci.appveyor.com/api/buildjobs/0so13a4rjwdbyy8j/artifacts/SpchListBuilder.1.0.15.nupkg)
+ - [latest download](https://ci.appveyor.com/project/ClnViewer/spchlistbuilder/build/artifacts)
+ - [zip archive NET 4.0](https://ci.appveyor.com/api/buildjobs/0so13a4rjwdbyy8j/artifacts/Metro%2Fbin%2FSpchListBuilder.zip)
+ - [nuget archive NET 4.0](https://ci.appveyor.com/api/buildjobs/0so13a4rjwdbyy8j/artifacts/SpchListBuilder.1.0.15.nupkg)
 
 More information is available on the links below: https://github.com/ClnViewer/Split-post-commit-Hook---SVN-GIT-HG
