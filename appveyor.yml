@@ -61,7 +61,7 @@ before_build:
 
 artifacts:
 
-    - path: test.zip
+    - path: SpchListBuilder.zip
 
     - path: Metro\bin\$(configuration)
 
@@ -83,6 +83,8 @@ deploy:
 
         branch: master
 
-        appveyor_repo_tag: true
+        appveyor_repo_tag: false
+
+before_deploy:
 
 
