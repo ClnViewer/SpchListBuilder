@@ -25,6 +25,8 @@ init:
 
     - git config --global core.autocrlf input
 
+clone_folder: c:\projects\spchlistbuilder
+
 nuget:
 
     account_feed: true
