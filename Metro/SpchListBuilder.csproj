@@ -104,7 +104,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>hook-max-ico.ico</ApplicationIcon>
+    <ApplicationIcon>spch.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -261,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="hook-max-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="spch.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
