@@ -221,37 +221,7 @@ namespace SpchListBuilder.Pages
             }
         }
 
-        public Task<string> ExportNodeDataText(bool isSelected = false)
-        {
-            try
-            {
-                return Task<string>.Factory.StartNew(() =>
-                {
-                    if (__isProcess)
-                    {
-                        Fire_EventError(new StringEventArgs(null, Resources.another_process_is_running));
-                        return String.Empty;
-                    }
-                    try
-                    {
-                        List<String> __list = this.TvNodes.ExportSelectedNode(isSelected);
-                        return String.Join("\n", __list.ToArray());                            //MLHIDE
-                    }
-                    catch (Exception e)
-                    {
-                        Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
-                        return String.Empty;
-                    }
-                });
-            }
-            catch (Exception e)
-            {
-                Fire_EventError(new StringEventArgs(e, Resources.Export_Task));
-                return null;
-            }
-        }
-
-        public Task<string> ExportNodeDataXml(VCSDataRepo repo, bool isSelected = false)
+        public Task<string> SaveNodeDataAll(VCSDataRepo repo, bool isSelected = false)
         {
             if (repo == null)
                 return null;
@@ -267,39 +237,47 @@ namespace SpchListBuilder.Pages
                     }
                     try
                     {
-                        SpchListData __data = new SpchListData()
+                        if (Properties.Settings.Default.XmlListOutputFormat)
                         {
-                            Setting = new SpchSettings
+                            SpchListData __data = new SpchListData()
                             {
-                                Options = String.Empty,
-                                RepoName = repo.RepoName,
-                                Date = DateTime.Now.GetUnixTimeStamp()
-                            },
-                            Files = new SpchFiles
+                                Setting = new SpchSettings
+                                {
+                                    Options = String.Empty,
+                                    RepoName = repo.RepoName,
+                                    Date = DateTime.Now.GetUnixTimeStamp()
+                                },
+                                Files = new SpchFiles
+                                {
+                                    Files = this.TvNodes.ExportSelectedNode(isSelected)
+                                }
+                            };
+                            if ((__data.Files.Files == null) || (__data.Files.Files.Count == 0))
                             {
-                                Files = this.TvNodes.ExportSelectedNode(isSelected)
+                                Fire_EventError(new StringEventArgs(null, Resources.Split_list_empty_select_files_));
+                                return String.Empty;
                             }
-                        };
-                        if ((__data.Files.Files == null) || (__data.Files.Files.Count == 0))
-                        {
-                            Fire_EventError(new StringEventArgs(null, Resources.Split_list_empty_select_files_));
-                            return String.Empty;
+
+                            XmlSerializer s = new XmlSerializer(typeof(SpchListData));
+                            using (StringWriter sw = new StringWriter())
+                            {
+                                using (XmlWriter xw = XmlWriter.Create(sw, new XmlWriterSettings()
+                                {
+                                    Encoding = new UTF8Encoding(false),
+                                    Indent = true,
+                                    NewLineOnAttributes = true,
+                                })
+                                )
+                                {
+                                    s.Serialize(xw, __data);
+                                    return sw.ToString();
+                                }
+                            }
                         }
-                        
-                        XmlSerializer s = new XmlSerializer(typeof(SpchListData));
-                        using (StringWriter sw = new StringWriter())
+                        else
                         {
-                            using (XmlWriter xw = XmlWriter.Create(sw, new XmlWriterSettings()
-                            {
-                                Encoding = new UTF8Encoding(false),
-                                Indent = true,
-                                NewLineOnAttributes = true,
-                            })
-                            )
-                            {
-                                s.Serialize(xw, __data);
-                                return sw.ToString();
-                            }
+                            List<String> __list = this.TvNodes.ExportSelectedNode(isSelected);
+                            return String.Join("\n", __list.ToArray());                            //MLHIDE
                         }
                     }
                     catch (Exception e)

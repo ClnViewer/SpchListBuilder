@@ -115,10 +115,7 @@ namespace SpchListBuilder.Pages
                 if (repo == null)
                     return;
 
-                Task<string> t = ((Properties.Settings.Default.XmlListOutputFormat) ?
-                    vcsp.ExportNodeDataXml(repo, true) :
-                    vcsp.ExportNodeDataText(true)
-                );
+                Task<string> t = vcsp.SaveNodeDataAll(repo, true);
 
                 if (t == null)
                     return;
@@ -427,10 +424,7 @@ namespace SpchListBuilder.Pages
                    )
                     return;
 
-                Task<string> t = ((Properties.Settings.Default.XmlListOutputFormat) ?
-                    vcsp.ExportNodeDataXml(repo, ischeck) :
-                    vcsp.ExportNodeDataText(ischeck)
-                );
+                Task<string> t = vcsp.SaveNodeDataAll(repo, ischeck);
 
                 if (t == null)
                     return;
