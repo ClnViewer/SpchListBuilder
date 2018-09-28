@@ -27,7 +27,7 @@
 #if(SVNCHECK)
 #   if(!DEBUG)    
     #error SVN - Working copy has uncommitted modifications, please commit all modifications before creating a release build. 
-    #error SVN - Working copy has multiple revisions, please update to the latest revision before creating a release build. 
+     
 #   endif
 #endif
 
@@ -52,6 +52,6 @@ using SpchListBuilder.Properties;
     ResourceDictionaryLocation.None,
     ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("1.0.119.*")]
-[assembly: AssemblyFileVersion("1.0.119.0")]
-[assembly: AssemblyInformationalVersion("Build date: 2018-09-28 23:24:42; Revision date: 2018-09-28 17:21:23; Revision(s) in working copy: 106:119; WARNING working copy had uncommitted modifications.")]
+[assembly: AssemblyVersion("1.0.126.*")]
+[assembly: AssemblyFileVersion("1.0.126.0")]
+[assembly: AssemblyInformationalVersion("Build date: 2018-09-29 00:01:17; Revision date: 2018-09-28 23:10:22; Revision(s) in working copy: 126; WARNING working copy had uncommitted modifications.")]
