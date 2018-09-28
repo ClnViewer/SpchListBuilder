@@ -52,6 +52,6 @@ using SpchListBuilder.Properties;
     ResourceDictionaryLocation.None,
     ResourceDictionaryLocation.SourceAssembly
 )]
-[assembly: AssemblyVersion("1.0.102.*")]
-[assembly: AssemblyFileVersion("1.0.102.0")]
-[assembly: AssemblyInformationalVersion("Build date: 2018-09-27 07:57:51; Revision date: 2018-09-27 07:32:32; Revision(s) in working copy: 95:102.")]
+[assembly: AssemblyVersion("1.0.117.*")]
+[assembly: AssemblyFileVersion("1.0.117.0")]
+[assembly: AssemblyInformationalVersion("Build date: 2018-09-28 17:34:58; Revision date: 2018-09-28 17:18:25; Revision(s) in working copy: 106:117.")]
