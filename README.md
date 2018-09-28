@@ -12,8 +12,8 @@
 ![SpchListBuilder Setup screen](docs/SpchListBuilder-Setup.png)
 
  - [latest Nuget/ZIP download](https://ci.appveyor.com/project/ClnViewer/spchlistbuilder/build/artifacts)
- - [zip archive NET 4.0](https://ci.appveyor.com/api/buildjobs/h1mr8bn81wf2qh74/artifacts/Metro%2Fbin%2FSpchListBuilder.zip)
- - [msi install, required NET 4.0](https://github.com/ClnViewer/SpchListBuilder/raw/master/docs/SpchListBuilderSetup.msi)
+ - [ZIP archive NET 4.0](https://ci.appveyor.com/api/buildjobs/h1mr8bn81wf2qh74/artifacts/Metro%2Fbin%2FSpchListBuilder.zip)
+ - [MSI install, required NET 4.0](https://github.com/ClnViewer/SpchListBuilder/raw/master/docs/SpchListBuilderSetup.msi)
 
 More information is available on the links below:
 
