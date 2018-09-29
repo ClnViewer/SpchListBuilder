@@ -260,10 +260,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="hook-max-ico.ico" />
+    <Resource Include="spch.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="spch.ico" />
+    <Resource Include="Resources\spch.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
