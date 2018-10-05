@@ -44,12 +44,13 @@ namespace SpchListBuilder.Pages
         private bool __isProcess { get; set; }
         private bool __isServiceMenu { get; set; }
         private int __repoItemsCount { get; set; }
-        private string __blockInfo { get; set; }      // Top InfoBox
-        string __repoInfo { get; set; }               // Bottom InfoBox
+        private string __blockInfo { get; set; }      /* Top InfoBox */
+        string __repoInfo { get; set; }               /* Bottom InfoBox */
 
         private ObservableCollectionExtension<ExtList> __ListExt { get; set; }
         private ObservableCollectionExtension<Node> __TvNodes { get; set; }
         private VCSDataRepo __repo { get; set; }
+        private SpchOptions __RepoOptions { get; set; }
 
         public ObservableCollectionExtension<ExtList> ListExt
         {
@@ -60,6 +61,11 @@ namespace SpchListBuilder.Pages
         {
             get { return __TvNodes; }
             private set { __TvNodes = value; OnPropertyChanged("TvNodes"); }  //MLHIDE
+        }
+        public SpchOptions RepoOptions
+        {
+            get { return __RepoOptions; }
+            private set { __RepoOptions = value; OnPropertyChanged("RepoOptions"); }  //MLHIDE
         }
         public string BlockInfo // Top InfoBox
         {
@@ -93,6 +99,7 @@ namespace SpchListBuilder.Pages
             __repo = null;
             this.TvNodes = new ObservableCollectionExtension<Node>();
             this.ListExt = new ObservableCollectionExtension<ExtList>();
+            this.RepoOptions = new SpchOptions();
         }
 
         public Task<bool> GetData(string exepath, VCSDataRepo repo)
@@ -201,6 +208,11 @@ namespace SpchListBuilder.Pages
                                 __ListExt.NotifyOn();
                             }));
 
+                        App.Current.Dispatcher.BeginInvoke((Action)(() =>
+                        {
+                            RepoOptions.Clear();
+                        }));
+
                         return true;
                     }
                     catch (Exception ex)
@@ -239,11 +251,14 @@ namespace SpchListBuilder.Pages
                     {
                         if (Properties.Settings.Default.XmlListOutputFormat)
                         {
+                            RepoOptions.VcsType = 
+                                Properties.Settings.Default.VCSBinText[Properties.Settings.Default.VCSBinSelect].ToLower();
+
                             SpchListData __data = new SpchListData()
                             {
                                 Setting = new SpchSettings
                                 {
-                                    Options = String.Empty,
+                                    Options = RepoOptions,
                                     RepoName = repo.RepoName,
                                     Date = DateTime.Now.GetUnixTimeStamp()
                                 },
@@ -340,6 +355,7 @@ namespace SpchListBuilder.Pages
                             {
                                 __TvNodes.SelectNodeByList(f.SplitToList());
                             }
+                            RepoOptions = __XmlData.Setting.Options;
                             __fileDate =
                                 __XmlData.Setting.Date.GetDateTimeFromUnixTimeStamp().ToShortDateString();
                         }

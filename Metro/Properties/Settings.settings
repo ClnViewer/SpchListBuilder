@@ -4,26 +4,27 @@
   <Settings>
     <Setting Name="VCSUrlStore" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;C:\__BuildSource\__SVN__\spch&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="WinHeight" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">600</Value>
+      <Value Profile="(Default)">700</Value>
     </Setting>
     <Setting Name="WinWidth" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">560</Value>
+      <Value Profile="(Default)">575</Value>
     </Setting>
     <Setting Name="WinLeft" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">50</Value>
     </Setting>
     <Setting Name="WinTop" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">50</Value>
     </Setting>
     <Setting Name="VCSBinPath" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;C:\TortoiseSVN\bin\svn.exe&lt;/string&gt;
+  &lt;string&gt;C:\__Bin\__VCS\TotoiseSVN\bin\svn.exe&lt;/string&gt;
   &lt;string&gt;C:\TortoiseGIT\bin\git.exe&lt;/string&gt;
-  &lt;string /&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="VCSBinSelect" Type="System.Int32" Scope="User">

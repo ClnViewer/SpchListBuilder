@@ -13,7 +13,7 @@
       FontSize="16"
       d:DesignHeight="600"
       d:DesignWidth="500"
-      d:DataContext="{d:DesignInstance local:Pages.PageMainViewModel}"
+      d:DataContext="{d:DesignInstance pg:PageMainViewModel}"
       mc:Ignorable="d">
     <pg:BasePage.Resources>
         <HierarchicalDataTemplate x:Key="VCSList" DataType="{x:Type local:Data.Node}" ItemsSource="{Binding Path=Nodes}">
@@ -36,7 +36,7 @@
             <Setter Property="BorderThickness" Value="0,1,0,1" x:Uid="ML_0115"></Setter>
             <Setter Property="Background" Value="White" x:Uid="ML_0116" />
             <Setter Property="VerticalAlignment" Value="Top" x:Uid="ML_0117" />
-            <Setter Property="Height" Value="400" x:Uid="ML_0118" />
+            <Setter Property="Height" Value="500" x:Uid="ML_0118" />
             <Setter Property="Margin" Value="5" x:Uid="ML_0119" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -105,7 +105,7 @@
                            TextWrapping="Wrap"
                            Text="{Binding BlockInfo}" 
                            Foreground="{StaticResource ResourceKey=AccentBaseColorBrush}" />
-                </Border>
+                    </Border>
                 </StackPanel>
                 <CtrlMh:SplitButton
                     Grid.Row="0" Grid.Column="1"
@@ -123,6 +123,186 @@
                     SelectedIndex="{local:SettingBinding VCSBinSelect}"
                     ItemsSource="{local:SettingBinding VCSBinText}" />
             </Grid>
+            <Expander
+                Margin="0"
+                Background="#FF119EDA"
+                Header="{x:Static res:Resources._Repo_Settings}"
+                IsExpanded="False"
+                  CtrlMh:GroupBoxHelper.HeaderForeground="{DynamicResource IdealForegroundColorBrush}"
+                  CtrlMh:ButtonHelper.PreserveTextCase="True">
+                <StackPanel>
+                    <Label Content="{x:Static res:Resources.Path_settings}" x:Uid="ML_0690" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Split_repository_path}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.SplitRepo, Mode=TwoWay}" x:Uid="ML_0691" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Deploy_script_path}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.Deploy, Mode=TwoWay}" x:Uid="ML_0692" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_BackUp_directory_path}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.Backup, Mode=TwoWay}" x:Uid="ML_0693" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Log_directory_path}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.Log, Mode=TwoWay}" x:Uid="ML_0693" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_VCS_binary_exec_path}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.ExecPath, Mode=TwoWay}" x:Uid="ML_0694" />
+                    <Label Content="{x:Static res:Resources.Active_user_id_Linux_only}" x:Uid="ML_0695" />
+                    <TextBox
+                        Margin="5,2,5,2"
+                        IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                        CtrlMh:TextBoxHelper.ClearTextButton="True"
+                        CtrlMh:TextBoxHelper.IsWaitingForData="False"
+                        CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_User_uid}"
+                        CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                        Text="{Binding Path=RepoOptions.Uuid, Mode=TwoWay}" x:Uid="ML_0696" />
+                    <Label Content="{x:Static res:Resources.Options}" x:Uid="ML_0697" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <CtrlMh:ToggleSwitch
+                            Grid.Row="0" Grid.Column="0"
+                            Margin="10,2,0,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            IsChecked="{Binding Path=RepoOptions.isDaemon, Mode=TwoWay}"
+                            OffLabel="{x:Static res:Resources.Disable_fork_and_daemonize}"
+                            OnLabel="{x:Static res:Resources.Enable_fork_and_daemonize}"
+                            Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0704" />
+                        <CtrlMh:ToggleSwitch
+                            Grid.Row="0" Grid.Column="1"
+                            Margin="10,2,0,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            IsChecked="{Binding Path=RepoOptions.isQuiet, Mode=TwoWay}"
+                            OffLabel="{x:Static res:Resources.Disable_quiet_mode}"
+                            OnLabel="{x:Static res:Resources.Enable_quiet_mode}"
+                            Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0705" />
+                        <CtrlMh:ToggleSwitch
+                            Grid.Row="1" Grid.Column="0"
+                            Margin="10,2,0,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            IsChecked="{Binding Path=RepoOptions.isForce, Mode=TwoWay}"
+                            OffLabel="{x:Static res:Resources.Disable_force_overwrite_files}"
+                            OnLabel="{x:Static res:Resources.Enable_force_overwrite_files}"
+                            Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0706" />
+                        <CtrlMh:ToggleSwitch
+                            Grid.Row="1" Grid.Column="1"
+                            Margin="10,2,0,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            IsChecked="{Binding Path=RepoOptions.isYaml, Mode=TwoWay}"
+                            OffLabel="{x:Static res:Resources.Disable_YAML_deploy_stage}"
+                            OnLabel="{x:Static res:Resources.Enable_YAML_deploy_stage}"
+                            Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" x:Uid="ML_0707" />
+                        <ComboBox
+                            Grid.Row="2" Grid.Column="0"
+                            Margin="5,5,5,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            CtrlMh:TextBoxHelper.ClearTextButton="True"
+                            CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                            CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_ChangeLog_format}"
+                            SelectedIndex="{Binding Path=RepoOptions.IdxChangeLog, Mode=TwoWay}">
+                            <ComboBoxItem Content="MarkDown format" x:Uid="ML_0709" />
+                            <ComboBoxItem Content="GNU text format" x:Uid="ML_0710" />
+                        </ComboBox>
+                        <ComboBox
+                            Grid.Row="2" Grid.Column="1"
+                            Margin="5,5,5,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            CtrlMh:TextBoxHelper.ClearTextButton="True"
+                            CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                            CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Files_check_mask}"
+                            SelectedIndex="{Binding Path=RepoOptions.IdxFileMaskCheck, Mode=TwoWay}">
+                            <ComboBoxItem Content="modify time" x:Uid="ML_0712" />
+                            <ComboBoxItem Content="create time" x:Uid="ML_0713" />
+                            <ComboBoxItem Content="size only" x:Uid="ML_0714" />
+                            <ComboBoxItem Content="modify time + size" x:Uid="ML_0715" />
+                            <ComboBoxItem Content="create time + size" x:Uid="ML_0716" />
+                            <ComboBoxItem Content="create + modify time + size" x:Uid="ML_0717" />
+                        </ComboBox>
+                    </Grid>
+                    <Label Content="{x:Static res:Resources.Rename_Append_files_prefix}" x:Uid="ML_0718" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="30" Block.TextAlignment="Center" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBox
+                            Grid.Row="0" Grid.Column="0"
+                            Margin="5,2,5,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            CtrlMh:TextBoxHelper.ClearTextButton="True"
+                            CtrlMh:TextBoxHelper.IsWaitingForData="False"
+                            CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                            CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Add_prefix_old}"
+                            CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                            Text="{Binding Path=RepoOptions.Prefix1, Mode=TwoWay}" x:Uid="ML_0724" />
+                        <Rectangle
+                            Grid.Row="0" Grid.Column="1"
+                            Width="15"
+                            Height="15"
+                            ToolTip="{Binding Path=RepoOptions.Prefix}"
+                            Fill="{StaticResource ResourceKey=AccentBaseColorBrush}">
+                            <Rectangle.OpacityMask>
+                                <VisualBrush Visual="{StaticResource appbar_chevron_right}" Stretch="Fill" />
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <TextBox
+                            Grid.Row="0" Grid.Column="2"
+                            Margin="5,2,5,2"
+                            IsEnabled="{Binding ServiceMenuIsEnable, Mode=OneWay}"
+                            CtrlMh:TextBoxHelper.ClearTextButton="True"
+                            CtrlMh:TextBoxHelper.IsWaitingForData="False"
+                            CtrlMh:TextBoxHelper.UseFloatingWatermark="True"
+                            CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Replace_prefix_new}"
+                            CtrlMh:TextBoxHelper.WatermarkAlignment="Right"
+                            Text="{Binding Path=RepoOptions.Prefix2, Mode=TwoWay}" x:Uid="ML_0727" />
+                    </Grid>
+                    <TextBlock
+                        Margin="5,2,5,2"
+                        FontSize="12"
+                        TextWrapping="Wrap"
+                        Text="{x:Static res:Resources.rename_copied_files_sample_pre}" x:Uid="ML_0728" />
+                    <Label
+                        Content=""
+                        Height="100"/>
+                </StackPanel>
+            </Expander>
             <TreeView
             Name="VCSTreeView"
             ItemTemplate="{StaticResource VCSList}"

@@ -13,8 +13,8 @@
         Width="{local:SettingBinding WinWidth}"
         Left="{local:SettingBinding WinLeft}"
         Top="{local:SettingBinding WinTop}"
-        d:DesignHeight="600"
-        d:DesignWidth="500"
+        d:DesignHeight="700"
+        d:DesignWidth="502"
         mc:Ignorable="d"
         ContentTemplate="{Binding}">
     <Controls:MetroWindow.RightWindowCommands>
@@ -67,7 +67,7 @@
         <Frame
              x:Name="ContentFrame"
              Margin="0,0,0,0"
-             Width="{Binding ActualWidth, ElementName=MainGrid}"
+             Width="{Binding ActualWidth, ElementName=VCSMainWindow, Mode=OneWay}"
              NavigationUIVisibility="Hidden" />
     </StackPanel>
 </Controls:MetroWindow>

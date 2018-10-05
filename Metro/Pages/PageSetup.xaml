@@ -155,7 +155,7 @@
                     <TextBox
                         Margin="0,2,0,2"
                         IsReadOnly="{Binding SetupUIisReadOnly, Mode=OneWay}" 
-                        CtrlMh:TextBoxHelper.Watermark="Output list repository file name"
+                        CtrlMh:TextBoxHelper.Watermark="{x:Static res:Resources.W_Output_list_repository}"
                         Text="{local:SettingBinding VCSOutListFileName}" />
                     <Label Content="{x:Static res:Resources.Default_expand_view_repository}" x:Uid="ML_0228" />
                     <CtrlMh:ToggleSwitch

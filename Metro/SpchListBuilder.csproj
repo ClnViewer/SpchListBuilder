@@ -267,7 +267,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if exist "C:\TortoiseSVN\bin\SubWCRev.exe" "C:\TortoiseSVN\bin\SubWCRev.exe" "$(ProjectDir)." "$(ProjectDir)Properties\AssemblyInfoTemplate.ct" "$(ProjectDir)Properties\AssemblyInfo.cs" -f</PreBuildEvent>
+    <PreBuildEvent>if exist "C:\__Bin\TotoiseSVN\bin\SubWCRev.exe" "C:\__Bin\TotoiseSVN\bin\SubWCRev.exe" "$(ProjectDir)." "$(ProjectDir)Properties\AssemblyInfoTemplate.ct" "$(ProjectDir)Properties\AssemblyInfo.cs" -f</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

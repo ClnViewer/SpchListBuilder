@@ -126,6 +126,9 @@
   <data name="_Options" xml:space="preserve">
     <value>_Options</value>
   </data>
+  <data name="_Repo_Settings" xml:space="preserve">
+    <value>_Split repository settings</value>
+  </data>
   <data name="_unknown_error" xml:space="preserve">
     <value>undefined error</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="_Version" xml:space="preserve">
     <value>_Version &amp; revision</value>
+  </data>
+  <data name="Active_user_id_Linux_only" xml:space="preserve">
+    <value>Active user id (Linux only):</value>
   </data>
   <data name="Add_to" xml:space="preserve">
     <value>Selected to</value>
@@ -164,8 +170,32 @@ More information is available on the links below:</value>
   <data name="Default_output_list_format" xml:space="preserve">
     <value>Output split list format, default XML</value>
   </data>
+  <data name="Disable_force_overwrite_files" xml:space="preserve">
+    <value>Disable force overwrite files</value>
+  </data>
+  <data name="Disable_fork_and_daemonize" xml:space="preserve">
+    <value>Disable fork and daemonize</value>
+  </data>
+  <data name="Disable_quiet_mode" xml:space="preserve">
+    <value>Disable quiet mode</value>
+  </data>
+  <data name="Disable_YAML_deploy_stage" xml:space="preserve">
+    <value>Disable YAML deploy stage</value>
+  </data>
   <data name="Disabled" xml:space="preserve">
     <value>Disabled</value>
+  </data>
+  <data name="Enable_force_overwrite_files" xml:space="preserve">
+    <value>Enable force overwrite files</value>
+  </data>
+  <data name="Enable_fork_and_daemonize" xml:space="preserve">
+    <value>Enable fork and daemonize</value>
+  </data>
+  <data name="Enable_quiet_mode" xml:space="preserve">
+    <value>Enable quiet mode</value>
+  </data>
+  <data name="Enable_YAML_deploy_stage" xml:space="preserve">
+    <value>Enable YAML deploy stage</value>
   </data>
   <data name="Enabled" xml:space="preserve">
     <value>Enabled</value>
@@ -263,6 +293,9 @@ More information is available on the links below:</value>
   <data name="Operation_fault" xml:space="preserve">
     <value>Operation fault</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options:</value>
+  </data>
   <data name="Output_split_list_repository_f" xml:space="preserve">
     <value>Output 'split list' repository file name</value>
   </data>
@@ -272,11 +305,20 @@ More information is available on the links below:</value>
   <data name="path_or_url_to_repository" xml:space="preserve">
     <value>path or url to repository</value>
   </data>
+  <data name="Path_settings" xml:space="preserve">
+    <value>Path settings:</value>
+  </data>
   <data name="Remove_to" xml:space="preserve">
     <value>UnSelected to</value>
   </data>
   <data name="Remove_VCS_binary" xml:space="preserve">
     <value>Remove VCS binary</value>
+  </data>
+  <data name="Rename_Append_files_prefix" xml:space="preserve">
+    <value>Rename/Append files prefix:</value>
+  </data>
+  <data name="rename_copied_files_sample_pre" xml:space="preserve">
+    <value>Rename copied files, sample prefix 'new' to 'old', or add one prefix 'old' if 'new' is not defined.</value>
   </data>
   <data name="Search_VCS_binary" xml:space="preserve">
     <value>Search VCS binary</value>
@@ -332,10 +374,43 @@ More information is available on the links below:</value>
   <data name="VCS_type_not_selected_abort" xml:space="preserve">
     <value>no VCS type selected</value>
   </data>
+  <data name="W_Add_prefix_old" xml:space="preserve">
+    <value>Add/Replace old prefix</value>
+  </data>
+  <data name="W_BackUp_directory_path" xml:space="preserve">
+    <value>BackUp directory path</value>
+  </data>
+  <data name="W_ChangeLog_format" xml:space="preserve">
+    <value>Create ChangeLog format</value>
+  </data>
+  <data name="W_Deploy_script_path" xml:space="preserve">
+    <value>Deploy script path</value>
+  </data>
+  <data name="W_Files_check_mask" xml:space="preserve">
+    <value>Files check mask</value>
+  </data>
+  <data name="W_Output_list_repository" xml:space="preserve">
+    <value>Output list repository file name</value>
+  </data>
+  <data name="W_Replace_prefix_new" xml:space="preserve">
+    <value>Replace this new prefix</value>
+  </data>
+  <data name="W_Split_repository_path" xml:space="preserve">
+    <value>Split repository path</value>
+  </data>
+  <data name="W_User_uid" xml:space="preserve">
+    <value>User uid, no root access</value>
+  </data>
+  <data name="W_VCS_binary_exec_path" xml:space="preserve">
+    <value>VCS binary exec path</value>
+  </data>
   <data name="XML" xml:space="preserve">
     <value>XML </value>
   </data>
   <data name="Xml_file_empty_or_corrupt" xml:space="preserve">
     <value>The downloaded file is corrupt or empty</value>
+  </data>
+  <data name="W_Log_directory_path" xml:space="preserve">
+    <value>Log files directory path</value>
   </data>
 </root>

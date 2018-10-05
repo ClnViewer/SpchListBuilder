@@ -126,6 +126,9 @@
   <data name="_Options" xml:space="preserve">
     <value>_Настройки</value>
   </data>
+  <data name="_Repo_Settings" xml:space="preserve">
+    <value>_Настройки split репозитория</value>
+  </data>
   <data name="_unknown_error" xml:space="preserve">
     <value>неизвестная ошибка</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="_Version" xml:space="preserve">
     <value>_Версия и ревезия</value>
+  </data>
+  <data name="Active_user_id_Linux_only" xml:space="preserve">
+    <value>Запускать от  id пользователя (только Linux):</value>
   </data>
   <data name="Add_to" xml:space="preserve">
     <value>Выбрать файлы:</value>
@@ -164,8 +170,32 @@ SpchListBuilder является приложением для создания 
   <data name="Default_output_list_format" xml:space="preserve">
     <value>Выходной формат файла, по умолчинию XML</value>
   </data>
+  <data name="Disable_force_overwrite_files" xml:space="preserve">
+    <value>Перезаписывать файлы по условию</value>
+  </data>
+  <data name="Disable_fork_and_daemonize" xml:space="preserve">
+    <value>Запуск в основном процессе</value>
+  </data>
+  <data name="Disable_quiet_mode" xml:space="preserve">
+    <value>Тихий режим выключен</value>
+  </data>
+  <data name="Disable_YAML_deploy_stage" xml:space="preserve">
+    <value>YAML деплой выключен</value>
+  </data>
   <data name="Disabled" xml:space="preserve">
     <value>Отключено</value>
+  </data>
+  <data name="Enable_force_overwrite_files" xml:space="preserve">
+    <value>Всегда перезаписывать файлы</value>
+  </data>
+  <data name="Enable_fork_and_daemonize" xml:space="preserve">
+    <value>Запуск фоновым процессом</value>
+  </data>
+  <data name="Enable_quiet_mode" xml:space="preserve">
+    <value>Тихий режим включен</value>
+  </data>
+  <data name="Enable_YAML_deploy_stage" xml:space="preserve">
+    <value>YAML деплой включен</value>
   </data>
   <data name="Enabled" xml:space="preserve">
     <value>Включено</value>
@@ -263,6 +293,9 @@ SpchListBuilder является приложением для создания 
   <data name="Operation_fault" xml:space="preserve">
     <value>Операция закончилась неудачно..</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Опции:</value>
+  </data>
   <data name="Output_split_list_repository_f" xml:space="preserve">
     <value>Имя файл листа в репозитории</value>
   </data>
@@ -272,11 +305,20 @@ SpchListBuilder является приложением для создания 
   <data name="path_or_url_to_repository" xml:space="preserve">
     <value>путь или URL-адрес репозитория</value>
   </data>
+  <data name="Path_settings" xml:space="preserve">
+    <value>Настройки путей файлов и директорий:</value>
+  </data>
   <data name="Remove_to" xml:space="preserve">
     <value>Отменить выбор:</value>
   </data>
   <data name="Remove_VCS_binary" xml:space="preserve">
     <value>Удалить путь</value>
+  </data>
+  <data name="Rename_Append_files_prefix" xml:space="preserve">
+    <value>Добавить/Переименовать префикс:</value>
+  </data>
+  <data name="rename_copied_files_sample_pre" xml:space="preserve">
+    <value>Переименовать скопированные файлы, пример префикса «новый» на «старый», или добавить один префикс «старый», если «новый» не определен.</value>
   </data>
   <data name="Search_VCS_binary" xml:space="preserve">
     <value>Найти путь</value>
@@ -332,6 +374,36 @@ SpchListBuilder является приложением для создания 
   <data name="VCS_type_not_selected_abort" xml:space="preserve">
     <value>не выбран тип VCS</value>
   </data>
+  <data name="W_Add_prefix_old" xml:space="preserve">
+    <value>Добавить/заменить старый префикс</value>
+  </data>
+  <data name="W_BackUp_directory_path" xml:space="preserve">
+    <value>Путь каталога BackUp</value>
+  </data>
+  <data name="W_ChangeLog_format" xml:space="preserve">
+    <value>ChangeLog создавать в формате</value>
+  </data>
+  <data name="W_Deploy_script_path" xml:space="preserve">
+    <value>Путь сценария развертывания</value>
+  </data>
+  <data name="W_Files_check_mask" xml:space="preserve">
+    <value>Маска проверки файлов</value>
+  </data>
+  <data name="W_Output_list_repository" xml:space="preserve">
+    <value>Имя файла списка выходных данных</value>
+  </data>
+  <data name="W_Replace_prefix_new" xml:space="preserve">
+    <value>Заменить на этот префикс</value>
+  </data>
+  <data name="W_Split_repository_path" xml:space="preserve">
+    <value>Путь split репозитория</value>
+  </data>
+  <data name="W_User_uid" xml:space="preserve">
+    <value>Запускать от UID пользователя</value>
+  </data>
+  <data name="W_VCS_binary_exec_path" xml:space="preserve">
+    <value>Путь до исполняемых файлов VCS</value>
+  </data>
   <data name="XML" xml:space="preserve">
     <value>XML </value>
   </data>
@@ -343,5 +415,8 @@ SpchListBuilder является приложением для создания 
   </data>
   <data name="undefined_fatal_error" xml:space="preserve">
     <value>неизвестная ошибка приложения</value>
+  </data>
+  <data name="W_Log_directory_path" xml:space="preserve">
+    <value>Путь каталога файлов журнала</value>
   </data>
 </root>
