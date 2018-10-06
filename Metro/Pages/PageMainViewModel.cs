@@ -26,6 +26,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -233,6 +234,7 @@ namespace SpchListBuilder.Pages
             }
         }
 
+        [SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
         public Task<string> SaveNodeDataAll(VCSDataRepo repo, bool isSelected = false)
         {
             if (repo == null)
