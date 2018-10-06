@@ -285,6 +285,7 @@ namespace SpchListBuilder.Pages
                                 )
                                 {
                                     s.Serialize(xw, __data);
+                                    s = null;
                                     return sw.ToString();
                                 }
                             }

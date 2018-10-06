@@ -256,10 +256,16 @@ namespace SpchListBuilder.Data
                     return;
 
                 __idxChangeLog = value;
-                ChangeLog = ((__idxChangeLog == 0) ? "md" :                  //MLHIDE
-                              ((__idxChangeLog == 1) ? "gnu" : String.Empty) //MLHIDE
-                );
-                OnPropertyChanged("IdxChangeLog");                           //MLHIDE
+                switch (__idxChangeLog)
+                {
+                    case 0:
+                        ChangeLog = "md"; break;                //MLHIDE
+                    case 1:
+                        ChangeLog = "gnu"; break;               //MLHIDE
+                    default:
+                        ChangeLog = String.Empty; break;
+                }
+                OnPropertyChanged("IdxChangeLog");              //MLHIDE
             }
         }
         [XmlIgnore]
@@ -295,9 +301,20 @@ namespace SpchListBuilder.Data
 
         private void __InChangeLog()
         {
-            IdxChangeLog = ((__ChangeLog == "md") ? 0 :                  //MLHIDE
-                              ((__ChangeLog == "gnu") ? 1 : -1)          //MLHIDE
-                );
+            if (String.IsNullOrWhiteSpace(__ChangeLog))
+            {
+                IdxChangeLog = -1;
+                return;
+            }
+            switch (__ChangeLog)
+            {
+                case "md":
+                    IdxChangeLog = 0; break;               //MLHIDE
+                case "gnu":
+                    IdxChangeLog = 1; break;               //MLHIDE
+                default:
+                    IdxFileMaskCheck = -1; break;
+            }
         }
 
         private void __InFileMaskCheck()
