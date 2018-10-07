@@ -280,7 +280,7 @@ namespace SpchListBuilder.Pages
                             {
                                 using (XmlWriter xw = XmlWriter.Create(sw, new XmlWriterSettings()
                                 {
-                                    Encoding = new UTF8Encoding(false),
+                                    Encoding = new UTF8Encoding(true, false),
                                     Indent = true,
                                     NewLineOnAttributes = true,
                                 })
